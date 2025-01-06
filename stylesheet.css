@@ -1,0 +1,299 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to bottom, #2aaeda 40%, 
+    #242419 50%,
+    #447644 75%,
+    #66b3ff 100%);
+    height: 100vh;
+}
+
+.headFirst{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 100vh; */
+    /* font-size: 3rem; */
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.mainNav ul{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 8px;
+    padding: 6px;
+}
+
+.mainNav ul li{
+    list-style-type: none;
+    padding: 2px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navOpen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 30px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* GETTING READY */
+.gettingReady{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ready h1{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.ready p{
+    color: gold;
+    font-size: 20px;
+}
+
+.gettingReady button{
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid gold;
+    font-size: 20px;
+}
+.gettingReady>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(150, 136, 56);
+    color: white;
+}
+
+/* THE IMAGE CAROUSEL SECTION
+
+*/
+
+.imageCarousel img{
+    width: 90%;
+    margin-left: 14px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.access{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.access h1{
+    color: white;
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+.access p{
+    color: gold;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.steps{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-left: 4px solid black;
+    margin-left: 15px;
+}
+.step{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    width: 320px;
+    padding: 9px;
+    border-radius: 20px;
+    height: 150px;
+}
+
+.step p{
+    font-size: 18px;
+    text-align-last: center;
+}
+
+/* THE VIDEO TUTORIAL SECTION */
+.videoTutorial h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    margin: 20px 0;
+}
+
+.videoss{
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    align-items: center;
+    padding: 10px;
+}
+
+video{
+    width: 180px;
+    height: 150px;
+}
+
+/* WHAT WE DO */
+.whatWeDo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.whatWeDo>h3{
+    color: white;
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+.whatWeDo>h4{
+    color: gold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tutorDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    width: 340px;
+    padding: 9px;
+    border-radius: 20px;
+    height: 200px;
+}
+
+.tutorDiv h3{
+    color: rgb(161, 123, 25);
+    font-size: 20px;
+}
+.tutorDiv p{
+    text-align-last: center;
+}
+.tutorDiv a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(150, 136, 56);
+    color: white;
+}
+
+.subscriptionsPackage{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.overheader h2{
+    color: rgb(232, 231, 227);
+    font-size: 25px;
+}
+
+.trialsVersion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    width: 340px;
+    padding: 9px;
+    border-radius: 20px;
+    height: 300px;
+}
+.trialsVersion h3{
+    color: rgb(131, 108, 25);
+    font-size: 25px;
+}
+sup{
+    padding: 0 3px 0 0;
+}
+.amountP{
+    width: 200px;
+    background-color: #2aaeda;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 30px 0 0 30px;
+    /* border-radius: 30px; */
+    border: 3px solid white;
+    outline: 3px solid #2aaeda;
+    color: white;
+}
+
+.otherVersions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    width: 340px;
+    padding: 9px;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.otherVersions a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 0 30px 30px 0;
+    /* border-radius: 30px; */
+    border: 3px solid white;
+    outline: 3px solid  rgb(119, 107, 34);
+    font-size: 20px;
+    background-color: rgb(119, 107, 34);
+    color: white;
+}
+.otherVersions p{
+    text-align-last: center;
+}
