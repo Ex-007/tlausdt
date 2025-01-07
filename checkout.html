@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>checkout</title>
+</head>
+<body>
+        <!-- THE NAVIGATION -->
+        <div class="headFirst">
+            <div class="logo">
+                <img src="./media/tla logo.png" alt="the logo">
+            </div>
+            <div class="navigation">
+                <h3 class="navOpen">#</h3>
+                <div class="mainNav" style="display: none;">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#subscriptionsPackage">License Plans</a></li>
+                        <li><a href="#getAccess">Step Guide</a></li>
+                        <li><a href="#footerSocial">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="makePaymentForm">
+            <h4>Proceed with your payment by filling these details</h4>
+            <h5>Product Key and Login Id will be sent to your email</h5>
+            <div class="formToFill">
+                <input type="text" id="firstname" placeholder="Your Firstname">
+                <input type="text" id="lastname" placeholder="Your Lastname">
+                <input type="text" id="email" placeholder="Your Email">
+                <select id="region">
+                    <option>Country/Region</option>
+                    <option>Nigeria</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                    <option>Kenya</option>
+                </select>
+                <p>
+                    Note: You're paying for <span class="comingPrice"></span> USDT package that returns <span class="comingReturn"></span>
+                </p>
+                <button id="payNowBtn">Pay Now</button>
+            </div>
+        </div>
+
+
+        <div class="paymentWallets" style="display: none;">
+            <div class="payHead">
+
+                <h4>Make your payment into any of the following wallet addresses</h4>
+                <h4 class="cancelHead">X</h4>
+            </div>
+            <div class="walletAccounts">
+                <p class="firstWallet">0x3fnaenjuc475ncvnuewbcfirst</p>
+                <h4 class="firstWalletCopy">copy</h4>
+            </div>
+            <div class="walletAccounts">
+                <p class="secondWallet">0x3fnaenjuc475ncvnuewbsecond</p>
+                <h4 class="secondWalletCopy">copy</h4>
+            </div>
+            <div class="walletAccounts">
+                <p class="thirdWallet">0x3fnaenjuc475ncvnuewbcthird</p>
+                <h4 class="thirdWalletCopy">copy</h4>
+            </div>
+            <p>
+                Send Your proof of payment to the admin
+            </p>
+            <div class="sendTelegram">
+                <a href="#">Send</a>
+
+            </div>
+        </div>
+
+
+    <!-- COPIED DIV -->
+        <div class="copied" style="display: none;">
+            <h4>Wallet Address Copied</h4>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- THE FOOTER SECTION -->
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="./media/tla logo.png" alt="">
+            </div>
+            <p>
+                Welcome to TLA Software! Your premeir destination for USDT Flashing.
+            </p>
+            <p>
+                We are here to help you get started with USDT Flashing. We offer a variety of license plans to suit your needs. <br> Get started today!
+            </p>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#subscriptionsPackage">License Plans</a></li>
+                    <li><a href="#getAccess">Step Guide</a></li>
+                    <li><a href="#footerSocial">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footerSocial" id="footerSocial">
+                <a href="">Facebook</a>
+                <a href="">Twitter</a>
+                <a href="">Instagram</a>
+                <a href="">Telegram</a>
+            </div>
+      </div>
+
+
+      <script>
+        let navOpen = document.querySelector('.navOpen')
+        let mainNav = document.querySelector('.mainNav')
+        
+        
+        navOpen.addEventListener('click', () => {
+            console.log(mainNav.style.display);
+            
+            if(mainNav.style.display === 'none'){
+                mainNav.style.display = 'flex'
+            }else{
+                mainNav.style.display = 'none'
+            }
+        })
+      </script>
+      <script src="app.js"></script>
+</body>
+</html>

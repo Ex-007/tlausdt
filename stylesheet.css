@@ -5,10 +5,11 @@
 }
 body{
     background-image: linear-gradient(to bottom, #2aaeda 40%, 
-    #242419 50%,
+    #242419 70%,
     #447644 75%,
-    #66b3ff 100%);
+    #66b3ff 60%);
     height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .headFirst{
@@ -62,7 +63,7 @@ a{
 
 .ready h1{
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 .ready p{
@@ -110,7 +111,7 @@ a{
 }
 .access h1{
     color: white;
-    font-size: 33px;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 .access p{
@@ -153,8 +154,8 @@ a{
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 35px;
-    margin: 20px 0;
+    font-size: 26px;
+    margin: 20px ;
 }
 
 .videoss{
@@ -162,6 +163,7 @@ a{
     grid-template-columns: 50fr 50fr;
     align-items: center;
     padding: 10px;
+    gap: 10px;
 }
 
 video{
@@ -186,6 +188,8 @@ video{
     color: gold;
     font-size: 20px;
     margin-bottom: 10px;
+    text-align-last: center;
+    padding: 0 0 0 5px;
 }
 
 .tutorDiv{
@@ -232,8 +236,8 @@ video{
     flex-direction: column;
 }
 .overheader h2{
-    color: rgb(232, 231, 227);
-    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
 }
 
 .trialsVersion{
@@ -312,7 +316,7 @@ sup{
     justify-content: center;
     align-items: center;
     margin: 10px 0;
-    color: rgb(208, 169, 28);
+    color: rgb(255, 255, 255);
     font-size: 30px;
 }
 
@@ -322,7 +326,7 @@ sup{
     align-items: center;
     margin: 10px 0;
     color: white;
-    font-size: 30px;
+    font-size: 23px;
 }
 .questionPalace{
     display: flex;
@@ -342,4 +346,196 @@ sup{
     padding: 9px;
     border-radius: 20px;
     height: 200px;
+}
+.question h5{
+    color: rgb(208, 169, 28);
+    font-size: 16px;
+    text-align-last: center;
+}
+
+/* THE FOOTER */
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer p{
+    text-align-last: center;
+    padding: 8px;
+    color: rgb(255, 230, 4);
+}
+.footerNav{
+    margin: 10px;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footerNav ul li{
+    list-style-type: none;
+}
+
+/* THE CHECKOUT PAGE */
+
+.makePaymentForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.makePaymentForm h4{
+    color: rgb(251, 251, 251);
+    font-size: 20px;
+    padding: 4px;
+    text-align-last: center;
+}
+.formToFill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+.formToFill p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    padding: 7px;
+}
+input, select{
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 6px;
+    font-size: 16px;
+    border: 3px solid white;
+    outline: 3px solid rgb(150, 136, 56);
+}
+select{
+    height: 40px;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 35px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(150, 136, 56);
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    color: rgb(150, 136, 56);
+    background-color: white;
+}
+.paymentWallets{
+    background-color: rgb(150, 136, 56);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0;
+    position: fixed;
+    top: 40px;
+}
+.paymentWallets h4{
+    font-size: 17px;
+    padding: 6px;
+    text-align: center;
+}
+.paymentWallets>p{
+    text-align: center;
+    font-size: 17px;
+}
+.sendTelegram>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 100px;
+    background-color: white;
+    color: rgb(150, 136, 56);
+}
+.sendTelegram>a:hover{
+    background-color: rgb(150, 136, 56);
+    color: white;
+}
+.sendTelegram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payHead{
+    background-color: white;
+    color: rgb(150, 136, 56);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cancelHead{
+    width: 40px;
+    height: 30px;
+    background-color: red;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.makePaymentForm h5{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+
+
+
+.walletAccounts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+}
+
+.walletAccounts h4{
+    background-color: white;
+    color: rgb(150, 136, 56);
+    margin-left: 8px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+}
+.walletAccounts>h4:hover{
+    background-color: rgb(150, 136, 56);
+    color: white;
+}
+.copied{
+    position: fixed;
+    top: 10px;
+    padding: 5px;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(150, 136, 56);
+    height: 80px;
 }
