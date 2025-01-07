@@ -162,13 +162,17 @@ a{
     display: grid;
     grid-template-columns: 50fr 50fr;
     align-items: center;
-    padding: 10px;
     gap: 10px;
+    margin-left: 20px;
+}
+.videoHosted{
+    margin-left: 20px;
+    border: 2px solid gold;
 }
 
-video{
-    width: 180px;
-    height: 150px;
+iframe{
+    margin: -40px;
+    padding: 10px;
 }
 
 /* WHAT WE DO */
@@ -251,6 +255,7 @@ video{
     padding: 9px;
     border-radius: 20px;
     height: 300px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .trialsVersion h3{
     color: rgb(131, 108, 25);
@@ -287,6 +292,8 @@ sup{
     padding: 9px;
     border-radius: 20px;
     height: 300px;
+    /* box-shadow: -10px -10px 5px #8e8585; */
+    box-shadow: inset 10px 6px 50px rgba(0, 0, 0, 1);
 }
 
 .otherVersions a{
@@ -464,6 +471,7 @@ button:hover{
     padding: 10px 0;
     position: fixed;
     top: 40px;
+    box-shadow: inset 10px 6px 50px rgba(0, 0, 0, 1);
 }
 .paymentWallets h4{
     font-size: 17px;
