@@ -256,6 +256,9 @@ video{
     color: rgb(131, 108, 25);
     font-size: 25px;
 }
+.trialsVersion p{
+    text-align:center;
+}
 sup{
     padding: 0 3px 0 0;
 }
@@ -422,6 +425,17 @@ input, select{
 }
 select{
     height: 40px;
+    overflow: hidden;
+}
+select::-webkit-scrollbar{
+    display: none;
+}
+option{
+    background-color: goldenrod;
+    color: white;
+    max-width: 200px;
+    border-radius: 30px;
+    height: 200px;
 }
 button{
     display: flex;

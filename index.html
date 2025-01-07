@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>tlausdt</title>
 </head>
 <body>
@@ -11,10 +16,11 @@
     <!-- THE NAVIGATION -->
     <div class="headFirst">
         <div class="logo">
-            <img src="./media/tla logo.png" alt="the logo">
+            <img src="./media/Newlogo.png" alt="the logo" width="70px">
+            <!-- <img src="./media/tla logo.png" alt="the logo"> -->
         </div>
         <div class="navigation">
-            <h3 class="navOpen">#</h3>
+            <h3 class="navOpen"><i class="fa-solid fa-bars"></i></h3>
             <div class="mainNav" style="display: none;">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -39,8 +45,8 @@
 
     <!-- THE IMAGE TUTORIAL USING CAROUSEL -->
      <div class="imageCarousel">
-        <img src="media/brandName.png" alt="a screenshot">
-        <img src="media/brandName.png" alt="a screenshot">
+        <img src="media/login iterface.jpg" alt="a screenshot">
+        <img src="media/dashboard.jpg" alt="a screenshot">
 
      </div>
 
@@ -74,7 +80,7 @@
        <div class="videoTutorial" id="videoTutorial">
         <h3>Video of TLA software</h3>
         <div class="videoss">
-            <video src="" controls></video>
+            <video src="./media/firstVideo.mov" controls></video>
             <video src="" controls></video>
             <video src="" controls></video>
             <video src="" controls></video>
@@ -92,7 +98,7 @@
                 <p>
                     We can send you any amount you want. Just let us know the amount you want and we will send it to you.  minimum of 10,000 usdt and maximum of 1 million per day
                 </p>
-                <a href="">Telegram</a>
+                <a href="https://t.me/tlafiles?start=I Don't Have a Laptop">Telegram</a>
             </div>
 
             <div class="tutorDiv">
@@ -101,7 +107,6 @@
                 <p>
                     TLA software works on both windows and mac. You can use it on any of the operating system.
                 </p>
-                <a href="">Telegram</a>
             </div>
         </div>
 
@@ -199,11 +204,8 @@
         <!-- THE SCREENSHOTS SECTION FOR IMAGES -->
          <div class="imagesSectionScreenshot">
             <h3>Proof of Work</h3>
-            <img src="./media/brandName.png" alt="">
-            <img src="./media/brandName.png" alt="">
-            <img src="./media/brandName.png" alt="">
-            <img src="./media/brandName.png" alt="">
-            <img src="./media/brandName.png" alt="">
+            <img src="./media/login iterface.jpg" alt="flash usdt interface">
+            <img src="./media/dashboard.jpg" alt="usdt flash software dashboard">
          </div>
 
 
@@ -239,7 +241,7 @@
           <!-- THE FOOTER SECTION -->
           <div class="footer">
                 <div class="footerLogo">
-                    <img src="./media/tla logo.png" alt="">
+                    <img src="./media/Newlogo.png" alt="the logo" width="70px">
                 </div>
                 <p>
                     Welcome to TLA Software! Your premeir destination for USDT Flashing.
@@ -256,10 +258,9 @@
                     </ul>
                 </div>
                 <div class="footerSocial" id="footerSocial">
-                    <a href="">Facebook</a>
-                    <a href="">Twitter</a>
-                    <a href="">Instagram</a>
-                    <a href="">Telegram</a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></i></a>
+                    <a href="https://wa.me/+31617248025"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://t.me/tlafiles"><i class="fa-brands fa-telegram"></i></a>
                 </div>
           </div>
 
@@ -273,8 +274,15 @@
                 
                 if(mainNav.style.display === 'none'){
                     mainNav.style.display = 'flex'
+                    navOpen.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+                    navOpen.style.backgroundColor = 'red'
+                    navOpen.style.color = 'white'
+                    // <i class="fa-solid fa-xmark"></i>
                 }else{
                     mainNav.style.display = 'none'
+                    navOpen.innerHTML = '<i class="fa-solid fa-bars"></i>'
+                    navOpen.style.backgroundColor = 'white'
+                    navOpen.style.color = 'black'
                 }
             })
           </script>

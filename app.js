@@ -16,6 +16,29 @@ const updateDetails = () => {
 }
 updateDetails()
 
+// https://restfulcountries.com /api/v1/countries/Nigeria
+
+// FETCHING COUNTRIES
+
+let regi = document.getElementById('region')
+
+// yg27t12JnzbxHyTjY7vEgDScrlUEF3u0MMvZAiEW
+fetch("https://countryapi.io/api/all?apikey=yg27t12JnzbxHyTjY7vEgDScrlUEF3u0MMvZAiEW")
+.then(res => {
+    return res.json()
+})
+.then(data => {
+    // console.log(data);
+    
+    let region = document.getElementById('region')
+    data.forEach(country => {
+        let option = document.createElement('option')
+        option.textContent = country.name
+        console.log(country)
+        region.appendChild(option)
+    })
+})
+.catch(err => console.log(err))
 
 
 
@@ -23,7 +46,6 @@ updateDetails()
 let first = document.getElementById('firstname')
 let last = document.getElementById('lastname')
 let emai = document.getElementById('email')
-let regi = document.getElementById('region')
 let payNowBtn = document.getElementById('payNowBtn')
 let paymentWallets = document.querySelector('.paymentWallets')
 
