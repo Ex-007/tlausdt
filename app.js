@@ -143,5 +143,11 @@ fetch(`https://api.telegram.org/bot${API_KEY}/sendMessage`, {
 .catch(error => console.error('Error sending message:', error));
 }
 
+// THE GET STARTED BUTTON FUNCTIONALITY
+let getStartedDiv = document.querySelector('.getStarted')
+getStartedDiv.addEventListener('click', () => {
+    window.location.href = 'index.html'
+})
+
 
 
