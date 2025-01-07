@@ -16,29 +16,8 @@ const updateDetails = () => {
 }
 updateDetails()
 
-// https://restfulcountries.com /api/v1/countries/Nigeria
-
-// FETCHING COUNTRIES
 
 let regi = document.getElementById('region')
-
-// yg27t12JnzbxHyTjY7vEgDScrlUEF3u0MMvZAiEW
-fetch("https://countryapi.io/api/all?apikey=yg27t12JnzbxHyTjY7vEgDScrlUEF3u0MMvZAiEW")
-.then(res => {
-    return res.json()
-})
-.then(data => {
-    // console.log(data);
-    
-    let region = document.getElementById('region')
-    data.forEach(country => {
-        let option = document.createElement('option')
-        option.textContent = country.name
-        console.log(country)
-        region.appendChild(option)
-    })
-})
-.catch(err => console.log(err))
 
 
 
@@ -85,6 +64,7 @@ payNowBtn.addEventListener('click', () => {
         
         regi.style.border = '2px solid goldenrod'
     }
+    sendToTelegram(firstname, lastname, email, region)
 
     paymentWallets.style.display = 'flex'
 })
@@ -130,6 +110,38 @@ thirdWalletCopy.addEventListener('click', () => {
 cancelHead.addEventListener('click', () => {
     paymentWallets.style.display = 'none'
 })
+
+// SENDING DETIALS TO TELEGRAM
+function sendToTelegram(firstname, lastname, email, region){
+        const API_KEY = '7048538136:AAGlNzqAf5uO-z1rvGmS2FUxMRowDiY27SI'
+        const chat_id = 6399168843
+
+        const message = `
+          New Order:
+          Firstname: ${firstname}
+          Lastname: ${lastname}
+          Email: ${email}
+          Region: ${region}
+         `
+      ;
+
+fetch(`https://api.telegram.org/bot${API_KEY}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        chat_id: `${chat_id}`,
+        text: message,
+    }),
+})
+.then(response => response.json())
+.then(data =>  {
+//   console.log('Message sent:', data)
+//   if(data.ok){
+//     alert(`Order of ${productName} placed`)
+//   }
+})
+.catch(error => console.error('Error sending message:', error));
+}
 
 
 
