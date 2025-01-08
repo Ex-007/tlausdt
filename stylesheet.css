@@ -65,8 +65,10 @@ a{
     color: white;
     font-size: 30px;
     margin-bottom: 20px;
+    text-align: center;
 }
 .ready p{
+    text-align: center;
     color: gold;
     font-size: 20px;
 }
@@ -156,6 +158,13 @@ a{
     color: white;
     font-size: 26px;
     margin: 20px ;
+}
+
+.trialVersionVideo h2{
+    text-align: center;
+    font-size: 27px;
+    color: white;
+    margin: 10px 0;
 }
 
 .videoss{
@@ -574,4 +583,49 @@ button:hover{
     background-color: white;
     color: rgb(150, 136, 56);
     height: 80px;
+}
+
+/* CONTACT PAGE */
+#ContactSubmit{
+    border: none;
+    border-radius: 0 0 0 0;
+    background-color: #2aaeda;
+}
+#ContactSubmit:hover{
+    color: #2aaeda;
+    background-color: whitesmoke;
+}
+textarea{
+    height: 100px;
+    width: 300px;
+    padding: 8px;
+    box-shadow: inset 10px 6px 50px rgb(192, 192, 196);
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+.contactForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #6897a7;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 10px 6px 50px rgb(26, 49, 195);
+}
+.contactForm h3{
+    text-align: center;
+    color: white;
+    font-size: 25;
+}
+.contactInput{
+    width: 300px;
+    border-radius: 10px;
+    height: 35px;
+    border: none;
+    outline: none;
+    box-shadow: inset 10px 6px 50px rgb(192, 192, 196);
 }

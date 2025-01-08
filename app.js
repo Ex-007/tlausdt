@@ -117,7 +117,7 @@ function sendToTelegram(firstname, lastname, email, region){
         const chat_id = 6399168843
 
         const message = `
-          New Order:
+          Purchase Token Message:
           Firstname: ${firstname}
           Lastname: ${lastname}
           Email: ${email}
