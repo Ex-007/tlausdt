@@ -74,14 +74,18 @@ payNowBtn.addEventListener('click', () => {
 let firstWallet = document.querySelector('.firstWallet')
 let secondWallet = document.querySelector('.secondWallet')
 let thirdWallet = document.querySelector('.thirdWallet')
+let fourthWallet = document.querySelector('.fourthWallet')
 let cancelHead = document.querySelector('.cancelHead')
 let copied = document.querySelector('.copied')
 
 let firstWalletCopy = document.querySelector('.firstWalletCopy')
 let secondWalletCopy = document.querySelector('.secondWalletCopy')
 let thirdWalletCopy = document.querySelector('.thirdWalletCopy')
+let fourthWalletCopy = document.querySelector('.fourthWalletCopy')
 
 firstWalletCopy.addEventListener('click', () => {
+    console.log('clicked');
+    
     navigator.clipboard.writeText(firstWallet.textContent)
     copied.style.display = 'flex'
     setTimeout(() => {
@@ -99,6 +103,14 @@ secondWalletCopy.addEventListener('click', () => {
 
 thirdWalletCopy.addEventListener('click', () => {
     navigator.clipboard.writeText(thirdWallet.textContent)
+    copied.style.display = 'flex'
+    setTimeout(() => {
+        copied.style.display = 'none'
+    }, 1500);
+})
+
+fourthWalletCopy.addEventListener('click', () => {
+    navigator.clipboard.writeText(fourthWallet.textContent)
     copied.style.display = 'flex'
     setTimeout(() => {
         copied.style.display = 'none'
@@ -144,10 +156,10 @@ fetch(`https://api.telegram.org/bot${API_KEY}/sendMessage`, {
 }
 
 // THE GET STARTED BUTTON FUNCTIONALITY
-let getStartedDiv = document.querySelector('.getStarted')
-getStartedDiv.addEventListener('click', () => {
-    window.location.href = 'index.html'
-})
+// let getStartedDiv = document.querySelector('.getStarted')
+// getStartedDiv.addEventListener('click', () => {
+//     window.location.href = 'index.html'
+// })
 
 
 

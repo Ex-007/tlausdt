@@ -555,12 +555,21 @@ button:hover{
 
 
 .walletAccounts{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
+    padding: 7px; */
+    
+    display: grid;
+    grid-template-columns: 10fr 75fr 15fr;
     padding: 7px;
+    align-items: center;
 }
 
+
+.walletAdd{
+    font-size: 11.1px;
+}
 .walletAccounts h4{
     background-color: white;
     color: rgb(150, 136, 56);
