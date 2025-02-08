@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="welcomeNote">
-        <h2>Hi, John</h2>
+        <h2>Welcome!</h2>
+        <h3 class="showCardDetails">Show Card Details</h3>
     </div>
     <div class="overallIn">
         <div class="balanceDiv">
@@ -28,14 +29,18 @@
                 </div>
             </div>
         </div>
-        <div class="contactForm">
+        <div class="imageCard">
+            <img src="media/phonto-1.JPG" class="debitCard" alt="card image">
+            <!-- <h3 class="showCardDetails">Show Card Details</h3> -->
+        </div>
+        <div class="contactForm cardDet" style="display: none;">
             <p>Card Details</p>
             <h3>Card Number:</h3>
             <p>5174 2050 3256 7526</p>
             <h3>Expiration:</h3>
             <p>12/27</p>
             <h3>CVV:</h3>
-            <p>12/27</p>
+            <p>147</p>
         </div>
     </div>
 
@@ -161,6 +166,9 @@
         let mainCoin = document.querySelector('.mainCoin')
         let copyBut= document.querySelector('.copyBut')
         let walletCopied= document.querySelector('.walletCopied')
+        let showCardDetails= document.querySelector('.showCardDetails')
+        let imageCard= document.querySelector('.imageCard')
+        let cardDet= document.querySelector('.cardDet')
         
         const checkClick = () => {
             if(withrawalNote.style.display == 'none'){
@@ -224,6 +232,18 @@
         }
 
         copyBut.addEventListener('click', copyAddress)
+
+        const showCardOthers = () => {
+            if(cardDet.style.display === 'none'){
+                cardDet.style.display = 'flex'
+                imageCard.style.display = 'none'
+            }else{
+                cardDet.style.display = 'none'
+                imageCard.style.display = 'flex'
+            }
+        }
+
+        showCardDetails.addEventListener('click', showCardOthers)
     </script>
 </body>
 </html>

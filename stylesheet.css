@@ -691,7 +691,7 @@ textarea{
 .welcomeNote{
     display: flex;
     color: white;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     margin: 10px;
 }
@@ -778,4 +778,14 @@ textarea{
 #withrawalNote{
     position: absolute;
     top: 150px;
+}
+
+.debitCard{
+    transform: rotate(90deg);
+    width: 200px;
+    margin: 30px 0;
+}
+.welcomeNote>h3{
+    color: white;
+    cursor: pointer;
 }
