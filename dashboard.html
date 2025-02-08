@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="welcomeNote">
+        <h2>Hi, John</h2>
+    </div>
+    <div class="overallIn">
+        <div class="balanceDiv">
+            <h3>Total Balance:</h3>
+            <h2>$191,601.10</h2>
+            <hr>
+            <div class="recentT">
+                <h3>Recent Trx.</h3>
+
+                <div class="outliner">
+                    <div class="outlinee in"></div>
+                    <h3>$191,401.00</h3>
+                </div>
+                <div class="outliner">
+                    <div class="outlinee in"></div>
+                    <h3>$200.00</h3>
+                </div>
+            </div>
+        </div>
+        <div class="contactForm">
+            <p>Card Details</p>
+            <h3>Card Number:</h3>
+            <p>5174 2050 3256 7526</p>
+            <h3>Expiration:</h3>
+            <p>12/27</p>
+            <h3>CVV:</h3>
+            <p>12/27</p>
+        </div>
+    </div>
+
+    <div class="withdrawDeposit">
+        <button class="deposit">Deposit</button>
+        <button class="withdraw">Withdraw</button>
+    </div>
+    <div class="contactForm" id="withrawalNote" style="display: none;">
+        <p>
+            You're about to withdraw from your card balance, please select your wallet app.
+        </p>
+        <input type="number" id="amountTo" placeholder="Amount to withdraw">
+        <select id="selectValue">
+            <option>Select Wallet App</option>
+            <option>MetaMask</option>
+            <option>Trust Wallet</option>
+            <option>Coinbase Wallet</option>
+            <option>Exodus</option>
+            <option>Atomic Wallet</option>
+            <option>Ledger Nano Wallet</option>
+            <option>Bitcoin Core Wallet</option>
+            <option>Phantom</option>
+            <option>Binance Wallet</option>
+            <option>Kucoin Wallet</option>
+            <option>Bybit Wallet</option>
+            <option>Luno Wallet</option>
+            <option>Revolut Wallet</option>
+            <option>Zengo</option>
+            <option>Edge Wallet</option>
+            <option>Blockchain Wallet</option>
+            <option>Coinomi</option>
+            <option>Guarda Wallet</option>
+            <option>Enjin Wallet</option>
+            <option>TokenPocket</option>
+            <option>Math Wallet</option>
+            <option>XDEFI Wallet</option>
+            <option>Bitget Wallet</option>
+            <option>Brave Wallet</option>
+            <option>Unstoppable Wallet</option>
+            <option>BlueWallet</option>
+            <option>Muun wallet</option>
+            <option>Electrum wallet</option>
+            <option>My Ether wallet</option>
+            <option>Jaxx Liberty wallet</option>
+            <option>Blockchain wallet</option>
+            <option>COLDCARD Mk4 wallet</option>
+            <option>Trezor Model T wallet</option>
+        </select>
+        <button id="finalProceed">Proceed</button>
+    </div>
+
+    <div class="footerDash">
+        <!-- <div class="firstshift">
+            <h3>Digital Business Transformation</h3>
+            <div class="apartment">
+                <div class="firstApartment">
+                    <div class="innerInner">
+                        <h3>Web Scale</h3>
+                        <p>
+                            Globally make transactions with your card
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="firstApartment">
+                    <div class="innerInner">
+                        <h3>Accepted Networks</h3>
+                        <p>
+                            Pay for your shoppings without hassles of failed transactions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="secondShift">
+            <div class="innerOne">
+                <h3>Quick Links</h3>
+                <a href="#">Products</a>
+                <a href="#">Trials</a>
+                <a href="#">Partners</a>
+                <a href="#">support</a>
+                <a href="#">Training</a>
+                <a href="#">Blogs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactForm" id="pleasePay" style="display: none;">
+        <h3>This Withrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
+            <p class="mainCoin">bc1qlnv4pks73n9zv3eklf8cne2tgk7mn5zr58s80r</p>
+            <p class="copyBut">Copy</p>
+        <button id="lastConfirm">Confirm</button>
+    </div>
+
+    <div class="contactForm" id="processing" style="display: none;">
+        <h3>Your payment is processing, you'll be credited shortlty <span class="deleter" id="deleteProcessing">X</span></h3>
+    </div>
+
+    <div class="contactForm walletCopied" style="display: none;">
+        <p>Wallet address Copied</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let withrawalBtn = document.querySelector('.withdraw')
+        let withrawalNote = document.getElementById('withrawalNote')
+        let pleasePay = document.getElementById('pleasePay')
+        let lastConfirm = document.getElementById('lastConfirm')
+        let processing = document.getElementById('processing')
+        let mainCoin = document.querySelector('.mainCoin')
+        let copyBut= document.querySelector('.copyBut')
+        let walletCopied= document.querySelector('.walletCopied')
+        
+        const checkClick = () => {
+            if(withrawalNote.style.display == 'none'){
+                withrawalNote.style.display = 'flex'
+                pleasePay.style.display = 'none'
+                processing.style.display = 'none'
+            }else{
+                withrawalNote.style.display = 'none'
+            }
+        }
+
+        const payment = () => {
+            let amountTo = document.getElementById('amountTo').value
+            let selectValue = document.getElementById('selectValue').value
+            if(amountTo === ''){
+                alert('no amout selected')
+                return
+            }
+            if(selectValue === 'Select Wallet App'){
+                alert('Please Select a wallet App')
+                return
+            }
+
+
+
+
+            if(pleasePay.style.display == 'none'){
+                pleasePay.style.display = 'flex'
+                 withrawalNote.style.display = 'none'
+            }else{
+                pleasePay.style.display = 'none'
+            }
+        }
+
+        const paymentProcessing = () => {
+            if(processing.style.display == 'none'){
+                processing.style.display = 'flex'
+                 pleasePay.style.display = 'none'
+                 withrawalNote.style.display = 'none'
+            }else{
+                processing.style.display = 'none'
+            }
+        }
+
+        withrawalBtn.addEventListener('click', checkClick)
+
+        let finalProceed = document.getElementById('finalProceed')
+        finalProceed.addEventListener('click', payment)
+        lastConfirm.addEventListener('click', paymentProcessing)
+
+        let deleteProcessing = document.getElementById('deleteProcessing').addEventListener('click', () => {
+            processing.style.display = 'none'
+        })
+
+        const copyAddress = () => {
+            navigator.clipboard.writeText(mainCoin.textContent)
+            walletCopied.style.display = 'flex'
+            setTimeout(() => {
+                walletCopied.style.display = 'none'
+            }, 1500);
+        }
+
+        copyBut.addEventListener('click', copyAddress)
+    </script>
+</body>
+</html>

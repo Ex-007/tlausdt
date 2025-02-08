@@ -84,7 +84,6 @@ let thirdWalletCopy = document.querySelector('.thirdWalletCopy')
 let fourthWalletCopy = document.querySelector('.fourthWalletCopy')
 
 firstWalletCopy.addEventListener('click', () => {
-    console.log('clicked');
     
     navigator.clipboard.writeText(firstWallet.textContent)
     copied.style.display = 'flex'

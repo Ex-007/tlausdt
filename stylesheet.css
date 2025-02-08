@@ -640,3 +640,142 @@ textarea{
     outline: none;
     box-shadow: inset 10px 6px 50px rgb(192, 192, 196);
 }
+
+.overallIn{
+    display: flex;
+    padding: 5px;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.contactForm>p{
+    text-align: center;
+    font-size: 17px;
+    color: #cbda2a;
+}
+.balanceDiv>h2{
+    color: #cbda2a;
+}
+
+.withdrawDeposit{
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+}
+.deposit{
+    background-color: green;
+}
+.withdraw{
+    background-color: rgb(128, 0, 0);
+}
+
+.outlinee{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+}
+.outliner{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+.in{
+    background-color: green;
+}
+.out{
+    background-color: rgb(128, 0, 0);
+}
+
+.welcomeNote{
+    display: flex;
+    color: white;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+}
+
+.footerDash{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    position: absolute;
+    bottom: 0;
+    /* align-items: center; */
+}
+.innerOne{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.firstshift{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+.firstshift>h3{
+    color: #cbda2a;;
+}
+.apartment{
+    display: flex;
+    /* gap: 10px; */
+}
+.innerInner{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 170px;
+    padding: 10px;
+}
+.innerInner>h3{
+    color: #cbda2a;;
+}
+.recentT>h3{
+    color: white;
+    font-size: 21.5px;
+    padding: 10px 0;
+}
+
+#pleasePay{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    margin-left: 0;
+    padding: 10px;
+    width: 100%;
+}
+.mainCoin{
+    font-size: 5px;
+}
+.deleter{
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+.conCopy{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.copyBut{
+    border: 2px solid white;
+    padding: 5px;
+    background-color: rgb(150, 136, 56);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.walletCopied{
+    position: absolute;
+    top: 200px;
+}
+#withrawalNote{
+    position: absolute;
+    top: 150px;
+}
