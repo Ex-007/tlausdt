@@ -89,6 +89,9 @@
             <option>Trezor Model T wallet</option>
         </select>
         <button id="finalProceed">Proceed</button>
+        <div class="back">
+            <h3 class="cancelWithraw" style="cursor: pointer;"><</h3>
+        </div>
     </div>
 
     <div class="footerDash">
@@ -168,6 +171,7 @@
         let showCardDetails= document.querySelector('.showCardDetails')
         let imageCard= document.querySelector('.imageCard')
         let cardDet= document.querySelector('.cardDet')
+        let cancelWithraw= document.querySelector('.cancelWithraw')
         
         const checkClick = () => {
             if(withrawalNote.style.display == 'none'){
@@ -178,6 +182,10 @@
                 withrawalNote.style.display = 'none'
             }
         }
+
+        cancelWithraw.addEventListener('click', () => {
+            withrawalNote.style.display = 'none'
+        })
 
         const payment = () => {
             let amountTo = document.getElementById('amountTo').value
