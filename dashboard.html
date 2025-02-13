@@ -132,15 +132,27 @@
     </div>
 
     <div class="contactForm" id="pleasePay" style="display: none;">
+        <!-- <h3>This Withrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
+            <p class="mainCoin">bc1qlnv4pks73n9zv3eklf8cne2tgk7mn5zr58s80r</p>
+            <p class="copyBut">Copy</p> -->
+            
+            <input type="text" class='walletAdd' placeholder='Enter your wallet Address'>
+        <button id="lastConfirm">Confirm</button>
+    </div>
+    <!-- <div class="contactForm" id="pleasePay" style="display: none;">
         <h3>This Withrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
             <p class="mainCoin">bc1qlnv4pks73n9zv3eklf8cne2tgk7mn5zr58s80r</p>
             <p class="copyBut">Copy</p>
         <button id="lastConfirm">Confirm</button>
-    </div>
+    </div> -->
 
-    <div class="contactForm" id="processing" style="display: none;">
-        <h3>Your payment is processing, you'll be credited shortlty <span class="deleter" id="deleteProcessing">X</span></h3>
+    <div class="contactForm lastNote" id="processing" style="display: none; background-color: red;">
+        <h3>Wallet Balance is low, you'll need $700 on your selected wallet to proceed</h3>
+        <h3 class="cancelWith" style="cursor: pointer;">X</h3>
     </div>
+    <!-- <div class="contactForm" id="processing" style="display: none; background-color: red;">
+        <h3>Your payment is processing, you'll be credited shortlty <span class="deleter" id="deleteProcessing">X</span></h3>
+    </div> -->
 
     <div class="contactForm walletCopied" style="display: none;">
         <p>Wallet address Copied</p>
@@ -172,6 +184,8 @@
         let imageCard= document.querySelector('.imageCard')
         let cardDet= document.querySelector('.cardDet')
         let cancelWithraw= document.querySelector('.cancelWithraw')
+        let cancelWith= document.querySelector('.cancelWith')
+        let lastNote= document.querySelector('.lastNote')
         
         const checkClick = () => {
             if(withrawalNote.style.display == 'none'){
@@ -185,6 +199,9 @@
 
         cancelWithraw.addEventListener('click', () => {
             withrawalNote.style.display = 'none'
+        })
+        cancelWith.addEventListener('click', () => {
+            lastNote.style.display = 'none'
         })
 
         const payment = () => {
