@@ -144,11 +144,11 @@
         <button id="lastConfirm">Confirm</button>
     </div>
 
-    <div class="contactForm lastNote" id="processing" style="display: none; background-color: red;">
-        <h3>Wallet Balance is low, you'll need $700 on your selected wallet to proceed</h3>
+    <div class="contactForm lastNote" id="processing" style="display: none; background-color: rgb(21, 125, 40);">
+        <h3>Please confirm that you're withdrawing on BTC network.. Mismatched address information may result to loss of assets</h3>
         <div class="contBack">
-            <button class="mainMenu">Main Menu</button>
-            <button class="cancelWith">Continue</button>
+            <!-- <button class="mainMenu">Main Menu</button> -->
+            <button class="cancelWith">Confirm</button>
         </div>
         <!-- <h3 class="cancelWith" style="cursor: pointer;">Proceed with payment</h3> -->
     </div>
@@ -160,6 +160,12 @@
         <p>Wallet address Copied</p>
     </div> -->
 
+    <div class="contactForm" id="codeDiv" style="display: none;">
+        <h3>Please Input the code sent to your app box below</h3>
+        <input type="text" id="codeMain" placeholder="Enter Code">
+        <p class="incorrectCode" style="display: none;">Incorrect Code</p>
+        <button id="codeConfirm">Confirm</button>
+    </div>
 
 
 
@@ -176,9 +182,11 @@
     <script>
         let withrawalBtn = document.querySelector('.withdraw')
         let withrawalNote = document.getElementById('withrawalNote')
+        let codeMain = document.getElementById('codeMain')
         let pleasePay = document.getElementById('pleasePay')
         let lastConfirm = document.getElementById('lastConfirm')
         let processing = document.getElementById('processing')
+        let codeDiv = document.getElementById('codeDiv')
         let mainCoin = document.querySelector('.mainCoin')
         let copyBut= document.querySelector('.copyBut')
         let walletCopied= document.querySelector('.walletCopied')
@@ -189,6 +197,7 @@
         let cancelWith= document.querySelector('.cancelWith')
         let lastNote= document.querySelector('.lastNote')
         let mainMenu= document.querySelector('.mainMenu')
+        let incorrectCode = document.querySelector('.incorrectCode')
         
         const checkClick = () => {
             if(withrawalNote.style.display == 'none'){
@@ -200,24 +209,40 @@
             }
         }
 
-        const main = () => {
-            withrawalNote.style.display = 'flex'
-            processing.style.display = 'none'
-            // if(withrawalNote.style.display == 'none'){
-            //     withrawalNote.style.display = 'flex'
-            //     pleasePay.style.display = 'none'
-            //     processing.style.display = 'none'
-            // }else{
-            //     withrawalNote.style.display = 'none'
-            // }
+        const mainCode = 'fri23day56'
+
+        const confirmCodeInput = () => {
+            let codeMainValue = codeMain.value
+            if(codeMainValue === mainCode){
+                codeDiv.style.display = 'none'
+                lastNote.style.display = 'none'
+            }else{
+                incorrectCode.style.display = 'flex'
+                codeDiv.style.backgroundColor = 'red'
+                setTimeout(() => {
+                    
+                    incorrectCode.style.display = 'none'
+                    codeDiv.style.backgroundColor = 'green'
+                }, 1500);
+                // alert('Incorrect Code')
+            }
         }
-        mainMenu.addEventListener('click', main)
+
+        codeConfirm.addEventListener('click', confirmCodeInput)
+
+        // const main = () => {
+        //     withrawalNote.style.display = 'flex'
+        //     processing.style.display = 'none'
+        // }
+        // mainMenu.addEventListener('click', main)
 
         cancelWithraw.addEventListener('click', () => {
             withrawalNote.style.display = 'none'
         })
+
         cancelWith.addEventListener('click', () => {
             lastNote.style.display = 'none'
+            codeDiv.style.display = 'flex'
         })
 
         const payment = () => {
