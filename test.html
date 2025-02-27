@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Balance</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        
+        .outliner {
+            position: relative;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .outlinee {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 6px 0 0 6px;
+            width: 6px;
+        }
+        
+        .outlinee.in {
+            background-color: #4CAF50;
+        }
+        
+        .outlinee.out {
+            background-color: #f44336;
+        }
+        
+        h3 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+        
+        .input-group {
+            margin: 25px 0;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .message {
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Account Balance</h2>
+        <div class="outliner" id="balance-container">
+            <div class="outlinee in"></div>
+            <h3 id="balance">$191,401.00</h3>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01">
+        </div>
+        
+        <button id="withdraw-btn">Withdraw</button>
+        
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const balanceElement = document.getElementById('balance');
+            const amountInput = document.getElementById('amount');
+            const withdrawBtn = document.getElementById('withdraw-btn');
+            const messageElement = document.getElementById('message');
+            
+            // Initialize balance from the displayed value
+            let currentBalance = parseFloat(balanceElement.textContent.replace(/[$,]/g, ''));
+            
+            // Format currency function
+            function formatMoney(amount) {
+                return '$' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+            
+            // Handle withdraw button click
+            withdrawBtn.addEventListener('click', function() {
+                // Get amount value
+                const withdrawAmount = parseFloat(amountInput.value);
+                
+                // Validate input
+                if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+                    messageElement.textContent = 'Please enter a valid amount.';
+                    messageElement.style.color = '#f44336';
+                    return;
+                }
+                
+                // Check if there's enough balance
+                if (withdrawAmount > currentBalance) {
+                    messageElement.textContent = 'Insufficient funds.';
+                    messageElement.style.color = '#f44336';
+                    return;
+                }
+                
+                // Update balance
+                currentBalance -= withdrawAmount;
+                
+                // Update display
+                balanceElement.textContent = formatMoney(currentBalance);
+                
+                // Show success message
+                messageElement.textContent = `Successfully withdrew ${formatMoney(withdrawAmount)}.`;
+                messageElement.style.color = '#4CAF50';
+                
+                // Clear input
+                amountInput.value = '';
+            });
+            
+            // Clear message when input changes
+            amountInput.addEventListener('input', function() {
+                messageElement.textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -14,7 +14,7 @@
     <div class="overallIn">
         <div class="balanceDiv">
             <h3>Total Balance:</h3>
-            <h2>$191,601.10</h2>
+            <h2 id="balance">$191,601.10</h2>
             <hr>
             <div class="recentT">
                 <h3>Recent Trx.</h3>
@@ -26,6 +26,10 @@
                 <div class="outliner">
                     <div class="outlinee in"></div>
                     <h3>$200.00</h3>
+                </div>
+                <div class="outliner incomeAdded" style="display: none;">
+                    <div class="outlinee out"></div>
+                    <h3 id="widthdrewMoney"></h3>
                 </div>
             </div>
         </div>
@@ -51,7 +55,7 @@
         <p>
             You're about to withdraw from your card balance, please select your wallet app.
         </p>
-        <input type="number" id="amountTo" placeholder="Amount to withdraw">
+        <input type="number" id="amountTo" placeholder="Amount to withdraw" min="0" step="0.01">
         <select id="selectValue">
             <option>Select Wallet App</option>
             <option>MetaMask</option>
@@ -182,6 +186,9 @@
     <script>
         let withrawalBtn = document.querySelector('.withdraw')
         let withrawalNote = document.getElementById('withrawalNote')
+        let widthdrewMoney = document.getElementById('widthdrewMoney')
+        let balance = document.getElementById('balance')
+        let amountTo = document.getElementById('amountTo')
         let codeMain = document.getElementById('codeMain')
         let pleasePay = document.getElementById('pleasePay')
         let lastConfirm = document.getElementById('lastConfirm')
@@ -198,7 +205,55 @@
         let lastNote= document.querySelector('.lastNote')
         let mainMenu= document.querySelector('.mainMenu')
         let incorrectCode = document.querySelector('.incorrectCode')
+        let incomeAdded = document.querySelector('.incomeAdded')
         
+
+
+        let currentBalance = parseFloat(balance.textContent.replace(/[$,]/g, ''));
+        // let withdrewBal = parseFloat(amountTo.value.replace(/[$,]/g, ''));
+        // Format currency function
+        function formatMoney(amount) {
+            return '$' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+
+        const confirmKill = () => {
+            const withdrawAmount = parseFloat(amountTo.value);
+
+            // Validate input
+            if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+                return;
+            }
+
+            // Check if there's enough balance
+            if (withdrawAmount > currentBalance) {
+                return;
+            }
+
+            // Update balance
+            currentBalance -= withdrawAmount;
+
+            // Update display
+            balance.textContent = formatMoney(currentBalance);
+            updateWithdraw(withdrawAmount)
+        }
+
+        const updateWithdraw = (withdrawAmount) => {
+            widthdrewMoney.textContent = formatMoney(withdrawAmount)
+            incomeAdded.style.display = 'flex'
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         const checkClick = () => {
             if(withrawalNote.style.display == 'none'){
                 withrawalNote.style.display = 'flex'
@@ -209,11 +264,12 @@
             }
         }
 
-        const mainCode = 'fri23day56'
+        const mainCode = '987654'
 
         const confirmCodeInput = () => {
             let codeMainValue = codeMain.value
             if(codeMainValue === mainCode){
+                confirmKill()
                 codeDiv.style.display = 'none'
                 lastNote.style.display = 'none'
             }else{
