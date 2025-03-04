@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="animatedLoad" style="display: none;"></div>
+    <div class="contactForm">
+        <h3>Please sign in to your account</h3>
+        <div class="formToFill">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button id="signInUser">Sign in</button>
+        </div>
+    </div>
+
+
+    <script>
+        const checkDetailsToLogin = () => {
+            let emailAdd = document.getElementById('email').value
+            let passwordAdd = document.getElementById('password').value
+            const animatedLoad = document.querySelector('.animatedLoad')
+
+            const realPass = 'pureform'
+            const realEmail = 'pureform@gmail.com'
+
+
+            if(emailAdd == ''){
+                alert('Please enter a valid email')
+            }else if(passwordAdd == ''){
+                alert('Please enter a valid password')
+            }else if(passwordAdd == realPass && emailAdd != realEmail){
+                alert('Please check the email')
+            }else if(passwordAdd != realPass && emailAdd == realEmail){
+                alert('Please check the email')
+            }else if(passwordAdd == realPass && emailAdd == realEmail){
+                animatedLoad.style.display = 'block'
+                setTimeout(() => {
+                    window.location.href = 'user.html'
+                }, 1500)
+            }else{
+                alert("Sorry, You're not authorized")
+            }
+        }
+
+        let signInUser = document.getElementById('signInUser')
+        signInUser.addEventListener('click', checkDetailsToLogin)
+    </script>
+</body>
+</html>
