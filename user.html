@@ -116,6 +116,7 @@
         <p style="font-size: 10; width: 100%; margin: 0 10px;">
             bc1qhtx86fhc0a9tkmeakajstyg <br> r2tgupjnw63cenx
         </p>
+        <p id="cancell" style="color: red; cursor: pointer;">X</p>
     </div>
 
     <div class="footerDash">
@@ -220,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastConfirm = document.getElementById('lastConfirm');
     let processing = document.getElementById('processing');
     let codeDiv = document.getElementById('codeDiv');
+    let cancell = document.getElementById('cancell');
     let mainCoin = document.querySelector('.mainCoin');
     let copyBut = document.querySelector('.copyBut');
     let walletCopied = document.querySelector('.walletCopied');
@@ -292,6 +294,11 @@ document.addEventListener('DOMContentLoaded', function() {
             recentTrx.insertBefore(transactionEl, recentTrx.children[3]);
         });
     }
+
+    // CANCEL THE COIN WITHDRAWAL NOTIFICATION
+    cancell.addEventListener('click', () => {
+        withdrawalNotiCoin.style.display = 'none'
+    })
 
     const confirmKill = () => {
         const withdrawAmount = parseFloat(amountTo.value);
