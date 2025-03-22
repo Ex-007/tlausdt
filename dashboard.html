@@ -49,7 +49,7 @@
     </div>
 
     <div class="withdrawDeposit">
-        <button>Deposit</button>
+        <button class="ddepositng">Deposit</button>
         <button class="withdraw">Withdraw</button>
     </div>
     <div class="contactForm" id="withrawalNote" style="display: none;">
@@ -139,6 +139,7 @@
         <div class="secondShift">
             <div class="innerOne">
                 <h3>Quick Links</h3>
+                <!-- <li class="ddepositng">Deposit</li> -->
                 <a href="#">Products</a>
                 <a href="#">Trials</a>
                 <a href="#">Partners</a>
@@ -190,6 +191,12 @@
     </div>
 
 
+    <div class="contactForm depp" style="display: none;">
+        <p>Please make your deposit on this wallet address <br> bc1qprdk35m3h3ygds9mahpuhp6pqph36h48s935eh</p>
+        <p class="cancelDeposit" style="cursor: pointer; color: red;">X</p>
+    </div>
+
+
 
 
 
@@ -228,6 +235,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let recentTrx = document.querySelector('.recentT');
     let withdrawSuccess = document.querySelector('.withdrawSuccess');
     let chargesDiv = document.querySelector('.chargesDiv');
+    let ddepositng = document.querySelector('.ddepositng');
+    let cancelDeposit = document.querySelector('.cancelDeposit');
+    let depp = document.querySelector('.depp');
 
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalance') ? 
@@ -436,6 +446,14 @@ document.addEventListener('DOMContentLoaded', function() {
     //         }
     //     });
     // }
+
+    ddepositng.addEventListener('click', () => {
+        depp.style.display = 'flex'
+    })
+
+    cancelDeposit.addEventListener('click', () => {
+        depp.style.display = 'none'
+    })
 
     const successWith = () => {
         if(withdrawSuccess.style.display == 'none'){
