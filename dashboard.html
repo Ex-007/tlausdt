@@ -423,19 +423,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Deposit functionality
    // const depositBtn = document.querySelector('.deposit');
-    if (depositBtn) {
-        depositBtn.addEventListener('click', () => {
-            const depositAmount = prompt("Enter deposit amount:");
-            if (depositAmount && !isNaN(parseFloat(depositAmount)) && parseFloat(depositAmount) > 0) {
-                const amount = parseFloat(depositAmount);
-                currentBalance += amount;
-                saveBalance(currentBalance);
-                saveTransaction(amount, 'deposit');
-                balance.textContent = formatMoney(currentBalance);
-                loadTransactionHistory();
-            }
-        });
-    }
+    // if (depositBtn) {
+    //     depositBtn.addEventListener('click', () => {
+    //         const depositAmount = prompt("Enter deposit amount:");
+    //         if (depositAmount && !isNaN(parseFloat(depositAmount)) && parseFloat(depositAmount) > 0) {
+    //             const amount = parseFloat(depositAmount);
+    //             currentBalance += amount;
+    //             saveBalance(currentBalance);
+    //             saveTransaction(amount, 'deposit');
+    //             balance.textContent = formatMoney(currentBalance);
+    //             loadTransactionHistory();
+    //         }
+    //     });
+    // }
 
     const successWith = () => {
         if(withdrawSuccess.style.display == 'none'){
