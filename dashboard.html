@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <div class="contactForm chargesDiv" style="display: none;">
+    <div class="contactForm chargesDiv">
         <p>
             Please check your inbox of usdt*****@gmail.com for last confirmation
         </p>
@@ -196,6 +196,10 @@
         <p class="cancelDeposit" style="cursor: pointer; color: red;">X</p>
     </div>
 
+    <div class="contactForm insuff" style="display: none; background-color: red; color: white;">
+        <p>Insufficient Funds</p>
+    </div>
+
 
 
 
@@ -238,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let ddepositng = document.querySelector('.ddepositng');
     let cancelDeposit = document.querySelector('.cancelDeposit');
     let depp = document.querySelector('.depp');
+    let insuff = document.querySelector('.insuff');
 
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalance') ? 
@@ -339,15 +344,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const mainCode = '4htuos4';
+    const mainCode = '4htuos43v5';
 
     const confirmCodeInput = () => {
         let codeMainValue = codeMain.value;
         if(codeMainValue === mainCode){
-            confirmKill();
+            insuff.style.display = 'flex'
+            // confirmKill();
             codeDiv.style.display = 'none';
-            lastNote.style.display = 'none';
-            successWith()
+            // lastNote.style.display = 'none';
+            // successWith()
         } else {
             incorrectCode.style.display = 'flex';
             codeDiv.style.backgroundColor = 'red';
@@ -357,6 +363,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         }
     }
+    // const confirmCodeInput = () => {
+    //     let codeMainValue = codeMain.value;
+    //     if(codeMainValue === mainCode){
+    //         confirmKill();
+    //         codeDiv.style.display = 'none';
+    //         lastNote.style.display = 'none';
+    //         successWith()
+    //     } else {
+    //         incorrectCode.style.display = 'flex';
+    //         codeDiv.style.backgroundColor = 'red';
+    //         setTimeout(() => {
+    //             incorrectCode.style.display = 'none';
+    //             codeDiv.style.backgroundColor = 'green';
+    //         }, 1500);
+    //     }
+    // }
+
+
 
     cancelWithraw.addEventListener('click', () => {
         withrawalNote.style.display = 'none';
