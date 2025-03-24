@@ -675,6 +675,16 @@ textarea{
     border-radius: 50%;
     background-color: green;
 }
+.outlineer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+}
 .outliner{
     display: flex;
     /* justify-content: center; */
