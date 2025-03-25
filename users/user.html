@@ -15,7 +15,7 @@
     <div class="overallIn">
         <div class="balanceDiv">
             <h3>Total Balance:</h3>
-            <h2 id="balance">$300.00</h2>
+            <h2 id="balance">$191,701.00</h2>
             <hr>
             <div class="recentT">
                 <h3>Recent Trx.</h3>
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalances') ? 
         parseFloat(localStorage.getItem('currentBalances')) : 
-        300.10;
+        191,701.00;
     
     // Update initial balance display
     balance.textContent = formatMoney(currentBalance);
