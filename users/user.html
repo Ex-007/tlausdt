@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalances') ? 
         parseFloat(localStorage.getItem('currentBalances')) : 
-        191,701.00;
+        191701.00;
     
     // Update initial balance display
     balance.textContent = formatMoney(currentBalance);
