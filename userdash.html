@@ -265,8 +265,8 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 
     // Initialize application state from localStorage or set defaults
-    let currentBalance = localStorage.getItem('newBalance') ? 
-        parseFloat(localStorage.getItem('newBalances')) : 
+    let currentBalance = localStorage.getItem('newBalancess') ? 
+        parseFloat(localStorage.getItem('newBalancess')) : 
         191401.22;
     
     // Update initial balance display
@@ -282,23 +282,23 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     // Save balance to localStorage
     function saveBalance(amount) {
-        localStorage.setItem('newBalances', amount.toString());
+        localStorage.setItem('newBalancess', amount.toString());
     }
 
     // Save transaction to history
     function saveTransaction(amount, type) {
-        let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
         transactions.push({
             amount: amount,
             type: type,
             date: new Date().toISOString()
         });
-        localStorage.setItem('transactions', JSON.stringify(transactions));
+        localStorage.setItem('transactionss', JSON.stringify(transactions));
     }
 
     // Load transaction history
     function loadTransactionHistory() {
-        let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
         
         // Clear existing transaction displays except the default ones
         const existingTransactions = recentTrx.querySelectorAll('.outliner:not(:nth-child(2)):not(:nth-child(3))');
