@@ -254,6 +254,28 @@ document.addEventListener('DOMContentLoaded', function() {
     let cancelDeposit = document.querySelector('.cancelDeposit');
     let depp = document.querySelector('.depp');
 
+
+    // CHECK AUTHENTICATION
+    const checkAuth = async () => {
+        try {
+            const {data:{session}, error} = await supabase.auth.getSession()
+            if(!session || error) {
+                localStorage.removeItem('email')
+                window.location.href = 'account.html'
+                return
+            }
+
+            console.log(session.user)
+        } catch (err) {
+            console.log(err.message)
+        }
+    } 
+
+    checkAuth()
+
+
+
+
     // Initialize application state from localStorage or set defaults
     let currentBalance = localStorage.getItem('currentBalancesss') ? 
         parseFloat(localStorage.getItem('currentBalancesss')) : 
