@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet.css">
+    <title>Verification</title>
+</head>
+<body>
+
+    <div class="contactForm authConfirm" style="display: none;">
+        <h3>Verifying...</h3>
+    </div>
+
+    <p id="error-message"></p>
+    <script type="module">
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+
+const supabaseUrl = 'https://lqyuluyuwrqwzdwdinfb.supabase.co';
+const supabaseKey =
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxeXVsdXl1d3Jxd3pkd2RpbmZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyMDczMzAsImV4cCI6MjA0ODc4MzMzMH0.6MIOTquPx74VeZfFDVb8S3Lq1Oqt_QwsfNGWG3-lqDA';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+
+        // AUTHENTICATE THE LINK
+    const updateAuth = async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token_hash = urlParams.get('token_hash');
+        const type = urlParams.get('type');
+
+        if (!token_hash || !type) {
+            console.error('Missing token_hash or type');
+            return;
+        }
+
+        try {
+            const { data, error } = await supabase.auth.verifyOtp({
+                token_hash,
+                type
+            });
+            if (error) throw error;
+            // console.log('Authentication successful:', data);
+            window.location.href = '../userdash.html';
+        } catch (err) {
+            console.error('Authentication error:', err.message);
+            const errorElement = document.getElementById('error-message');
+            if (errorElement) {
+                errorElement.textContent = 'Authentication failed. Please try again.';
+            }
+        }
+    }
+
+document.addEventListener('DOMContentLoaded', updateAuth);
+    </script>
+</body>
+</html>

@@ -22,8 +22,8 @@
             let emailAdd = document.getElementById('email').value
             let passwordAdd = document.getElementById('password').value
 
-            const realPass = 'Janesmann44'
-            const realEmail = 'Jan@janesmann.com'
+            const realPass = '@180160Btc@'
+            const realEmail = 'jan@janesmann.com'
 
 
             if(emailAdd == ''){
@@ -35,7 +35,7 @@
             }else if(passwordAdd != realPass && emailAdd == realEmail){
                 alert('Please check the email')
             }else if(passwordAdd == realPass && emailAdd == realEmail){
-                window.location.href = '/users/user.html'
+                window.location.href = 'registration.html'
             }else{
                 alert("Sorry, You're not authorized")
             }

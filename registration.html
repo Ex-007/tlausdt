@@ -3,52 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Login</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="animatedLoad" style="display: none;"></div>
-    <div class="contactForm">
-        <h3>Please sign in to your account</h3>
+    <div class="animatedLoad" id="cereal" style="display: none;"></div>
+    <div class="contactForm authEmail">
+        <h3>Please Enter Your Email For Authentication!!!</h3>
         <div class="formToFill">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
-            <button id="signInUser">Sign in</button>
+            <input type="email" id="email" placeholder=" Input Email">
+            <button id="signInUser">Confirm</button>
         </div>
     </div>
 
 
-    <script>
-        const checkDetailsToLogin = () => {
-            let emailAdd = document.getElementById('email').value
-            let passwordAdd = document.getElementById('password').value
-            const animatedLoad = document.querySelector('.animatedLoad')
-
-            const realPass = 'pureform'
-            const realEmail = 'pureform@gmail.com'
+    <div class="contactForm authConfirm" style="display: none;">
+        <h3>Please check your email for authentication Link.</h3>
+    </div>
 
 
-            if(emailAdd == ''){
-                alert('Please enter a valid email')
-            }else if(passwordAdd == ''){
-                alert('Please enter a valid password')
-            }else if(passwordAdd == realPass && emailAdd != realEmail){
-                alert('Please check the email')
-            }else if(passwordAdd != realPass && emailAdd == realEmail){
-                alert('Please check the email')
-            }else if(passwordAdd == realPass && emailAdd == realEmail){
-                animatedLoad.style.display = 'block'
-                setTimeout(() => {
-                    window.location.href = 'user.html'
-                }, 1500)
-            }else{
-                alert("Sorry, You're not authorized")
+
+    <script type="module">
+
+        let authConfirm = document.querySelector('.authConfirm')
+        let authEmail = document.querySelector('.authEmail')
+
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+
+const supabaseUrl = 'https://lqyuluyuwrqwzdwdinfb.supabase.co';
+const supabaseKey =
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxeXVsdXl1d3Jxd3pkd2RpbmZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyMDczMzAsImV4cCI6MjA0ODc4MzMzMH0.6MIOTquPx74VeZfFDVb8S3Lq1Oqt_QwsfNGWG3-lqDA';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+
+        const signInUser = document.getElementById('signInUser');
+        const emailAddress = document.getElementById('email');
+        const cereal = document.getElementById('cereal');
+
+        const sendOtp = async () => {
+            const email = emailAddress.value
+            cereal.style.display = 'flex'
+            try {
+                if(email === '') throw new Error('Please Enter Email')
+                const { data, error } = await supabase.auth.signInWithOtp({ 
+                    email: email,
+                    options : {
+                        shouldCreateUser : false,
+                        emailRedirectTo : 'https://www.tlausdtfiles.pro/auth/confirm.html'
+                    }
+                 });
+                 if(error) throw error
+                
+                 authEmail.style.display = 'none'
+                 cereal.style.display = 'none'
+                 authConfirm.style.display = 'flex'
+                 localStorage.setItem('email', email)
+            } catch (err) {
+                alert(err.message)
+                cereal.style.display = 'none'
             }
         }
+  
 
-        let signInUser = document.getElementById('signInUser')
-        signInUser.addEventListener('click', checkDetailsToLogin)
+        
+
+        signInUser.addEventListener('click', sendOtp)
     </script>
 </body>
 </html>
