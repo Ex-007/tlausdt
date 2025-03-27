@@ -207,7 +207,22 @@
 
 
 
-    <script>
+    <script type='module'>
+
+
+import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+
+const supabaseUrl = 'https://lqyuluyuwrqwzdwdinfb.supabase.co';
+const supabaseKey =
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxeXVsdXl1d3Jxd3pkd2RpbmZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyMDczMzAsImV4cCI6MjA0ODc4MzMzMH0.6MIOTquPx74VeZfFDVb8S3Lq1Oqt_QwsfNGWG3-lqDA';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get elements
     let withrawalBtn = document.querySelector('.withdraw');
