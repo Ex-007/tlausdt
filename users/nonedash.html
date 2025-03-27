@@ -15,31 +15,23 @@
     <div class="overallIn">
         <div class="balanceDiv">
             <h3>Total Balance:</h3>
-            <h2 id="balance">$191,701.00</h2>
+            <h2 id="balance">$191,301.00</h2>
             <hr>
             <div class="recentT">
                 <h3>Recent Trx.</h3>
 
                 <div class="outliner">
                     <div class="outlinee in"></div>
-                    <h3>$191,401.00</h3>
+                    <h3>$190,301.00</h3>
                 </div>
                 <div class="outliner">
                     <div class="outlinee in"></div>
-                    <h3>$200.00</h3>
+                    <h3>$1,000.00</h3>
                 </div>
                 <div class="outliner incomeAdded" style="display: none;">
                     <div class="outlinee out"></div>
                     <h3 id="widthdrewMoney"></h3>
                 </div>
-            </div>
-            <div class="outliner">
-                <div class="outlinee out"></div>
-                <h3>$190,000.00</h3>
-            </div>
-            <div class="outliner">
-                <div class="outlinee out"></div>
-                <h3>$1,601.10</h3>
             </div>
         </div>
         <div class="imageCard">
@@ -248,9 +240,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let depp = document.querySelector('.depp');
 
     // Initialize application state from localStorage or set defaults
-    let currentBalance = localStorage.getItem('currentBalances') ? 
-        parseFloat(localStorage.getItem('currentBalances')) : 
-        191701.00;
+    let currentBalance = localStorage.getItem('currentBalancesss') ? 
+        parseFloat(localStorage.getItem('currentBalancesss')) : 
+        191301.00;
     
     // Update initial balance display
     balance.textContent = formatMoney(currentBalance);
@@ -265,23 +257,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Save balance to localStorage
     function saveBalance(amount) {
-        localStorage.setItem('currentBalances', amount.toString());
+        localStorage.setItem('currentBalancesss', amount.toString());
     }
 
     // Save transaction to history
     function saveTransaction(amount, type) {
-        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactionsss')) || [];
         transactions.push({
             amount: amount,
             type: type,
             date: new Date().toISOString()
         });
-        localStorage.setItem('transactionss', JSON.stringify(transactions));
+        localStorage.setItem('transactionsss', JSON.stringify(transactions));
     }
 
     // Load transaction history
     function loadTransactionHistory() {
-        let transactions = JSON.parse(localStorage.getItem('transactionss')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactionsss')) || [];
         
         // Clear existing transaction displays except the default ones
         const existingTransactions = recentTrx.querySelectorAll('.outliner:not(:nth-child(2)):not(:nth-child(3))');
