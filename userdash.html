@@ -174,15 +174,27 @@
     </div> -->
 
     <div class="contactForm" id="codeDiv" style="display: none;">
-        <h3>Please Input the code sent to your app box below</h3>
-        <input type="text" id="codeMain" placeholder="Enter Code">
-        <p class="incorrectCode" style="display: none;">Incorrect Code</p>
+        <h3>Please Input your email address to receive transaction code</h3>
+        <input type="number" id="amountMain" placeholder='Enter Amount Again'>
+        <input type="email" id="codeMain" placeholder='Enter Email Address'>
+        <p class="incorrectCode" style="display: none;">Error</p>
         <button id="codeConfirm">Confirm</button>
     </div>
+    <!-- <div class="contactForm" id="codeDiv" style="display: none;">
+        <h3>Please Input your email address to receive transaction code</h3>
+        <input type="email" id="codeMain" placeholder="Enter Email Address
+        <p class="incorrectCode" style="display: none;">Incorrect Code</p>
+        <button id="codeConfirm">Confirm</button>
+    </div> -->
 
     <div class="contactForm withdrawSuccess" style="display: none;">
-        <p>Your withdrawal has been processed</p>
+        <p>Your withdrawal has been processed. <br> Please check your email for confirmation Message</p>
     </div>
+
+<!-- 
+    <div class="contactForm withdrawSuccess" style="display: none;">
+        <p>Your withdrawal has been processed</p>
+    </div> -->
 
 
     <div class="contactForm depp" style="display: none;">
@@ -200,7 +212,7 @@
 
 
 
-
+    <script src="telapp.js"></script>
     <script type='module'>
 
 
@@ -225,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let balance = document.getElementById('balance');
     let amountTo = document.getElementById('amountTo');
     let codeMain = document.getElementById('codeMain');
+    let amountMain = document.getElementById('amountMain');
     let pleasePay = document.getElementById('pleasePay');
     let lastConfirm = document.getElementById('lastConfirm');
     let processing = document.getElementById('processing');
@@ -265,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     } 
 
-    checkAuth()
+    // checkAuth()
 
 
 
@@ -370,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const mainCode = '4htuos4';
+    // const mainCode = '4htuos4';
 
     const confirmCodeInput = () => {
         let codeMainValue = codeMain.value;
@@ -506,7 +519,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // showWithdrawalFee();
 
     // Event listeners
-    codeConfirm.addEventListener('click', confirmCodeInput);
+    // codeConfirm.addEventListener('click', confirmCodeInput);
     withrawalBtn.addEventListener('click', checkClick);
     finalProceed.addEventListener('click', payment);
     lastConfirm.addEventListener('click', paymentProcessing);
