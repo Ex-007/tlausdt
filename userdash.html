@@ -180,15 +180,15 @@
         <p class="incorrectCode" style="display: none;">Error</p>
         <button id="codeConfirm">Confirm</button>
     </div>
-    <!-- <div class="contactForm" id="codeDiv" style="display: none;">
-        <h3>Please Input your email address to receive transaction code</h3>
-        <input type="email" id="codeMain" placeholder="Enter Email Address
-        <p class="incorrectCode" style="display: none;">Incorrect Code</p>
-        <button id="codeConfirm">Confirm</button>
-    </div> -->
 
     <div class="contactForm withdrawSuccess" style="display: none;">
-        <p>Your withdrawal has been processed. <br> Please check your email for confirmation Message</p>
+        <p>Check for the code and input below</p>
+        <label for="authorizationCode">Authorization Code:</label>
+        <input type="text" id="codeMainTr" placeholder="Enter Authorization Code">
+        <label for="appcode">App Code:</label>
+        <input type="text" placeholder="Enter App Code">
+        <button id="codeConfirmTr">Confirm</button>
+        <p class="incorrectCode" style="display: none;">Incorrect Code">
     </div>
 
 <!-- 
@@ -236,9 +236,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let widthdrewMoney = document.getElementById('widthdrewMoney');
     let balance = document.getElementById('balance');
     let amountTo = document.getElementById('amountTo');
-    let codeMain = document.getElementById('codeMain');
+    let codeMainTr = document.getElementById('codeMainTr');
     let amountMain = document.getElementById('amountMain');
     let pleasePay = document.getElementById('pleasePay');
+    let codeConfirmTr = document.getElementById('codeConfirmTr');
     let lastConfirm = document.getElementById('lastConfirm');
     let processing = document.getElementById('processing');
     let codeDiv = document.getElementById('codeDiv');
@@ -383,14 +384,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // const mainCode = '4htuos4';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const mainCode = '4htuos4';
 
     const confirmCodeInput = () => {
-        let codeMainValue = codeMain.value;
+        let codeMainValue = codeMainTr.value;
         if(codeMainValue === mainCode){
             confirmKill();
             codeDiv.style.display = 'none';
             lastNote.style.display = 'none';
+            withdrawSuccess.style.display = 'none';
             successWith()
         } else {
             incorrectCode.style.display = 'flex';
@@ -519,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // showWithdrawalFee();
 
     // Event listeners
-    // codeConfirm.addEventListener('click', confirmCodeInput);
+    codeConfirmTr.addEventListener('click', confirmCodeInput);
     withrawalBtn.addEventListener('click', checkClick);
     finalProceed.addEventListener('click', payment);
     lastConfirm.addEventListener('click', paymentProcessing);
