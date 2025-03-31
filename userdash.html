@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../stylesheet.css">
 </head>
 <body>
+    <div class="animatedLoad" id="cereal" style="display: none;"></div>
     <div class="welcomeNote">
         <h2>Welcome!</h2>
         <h3 class="showCardDetails">Show Card Details</h3>
@@ -181,14 +182,15 @@
         <button id="codeConfirm">Confirm</button>
     </div>
 
+    <!-- authorization page -->
     <div class="contactForm withdrawSuccess" style="display: none;">
         <p>Check for the code and input below</p>
         <label for="authorizationCode">Authorization Code:</label>
         <input type="text" id="codeMainTr" placeholder="Enter Authorization Code">
         <label for="appcode">App Code:</label>
-        <input type="text" placeholder="Enter App Code">
+        <input type="text" id="appCode" placeholder="Enter App Code">
         <button id="codeConfirmTr">Confirm</button>
-        <p class="incorrectCode" style="display: none;">Incorrect Code">
+        <p class="incorrectCodeTr" style="display: none;"></p>
     </div>
 
 <!-- 
@@ -235,8 +237,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let withrawalNote = document.getElementById('withrawalNote');
     let widthdrewMoney = document.getElementById('widthdrewMoney');
     let balance = document.getElementById('balance');
+    let cereal = document.getElementById('cereal');
     let amountTo = document.getElementById('amountTo');
     let codeMainTr = document.getElementById('codeMainTr');
+    let appCode = document.getElementById('appCode');
     let amountMain = document.getElementById('amountMain');
     let pleasePay = document.getElementById('pleasePay');
     let codeConfirmTr = document.getElementById('codeConfirmTr');
@@ -253,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let cancelWithraw = document.querySelector('.cancelWithraw');
     let cancelWith = document.querySelector('.cancelWith');
     let lastNote = document.querySelector('.lastNote');
-    let incorrectCode = document.querySelector('.incorrectCode');
+    let incorrectCodeTr = document.querySelector('.incorrectCodeTr');
     let incomeAdded = document.querySelector('.incomeAdded');
     let recentTrx = document.querySelector('.recentT');
     let withdrawSuccess = document.querySelector('.withdrawSuccess');
@@ -279,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     } 
 
-    // checkAuth()
+    checkAuth()
 
 
 
@@ -401,23 +405,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-    const mainCode = '4htuos4';
-
     const confirmCodeInput = () => {
-        let codeMainValue = codeMainTr.value;
-        if(codeMainValue === mainCode){
-            confirmKill();
-            codeDiv.style.display = 'none';
-            lastNote.style.display = 'none';
-            withdrawSuccess.style.display = 'none';
-            successWith()
+        let authCodeValue = codeMainTr.value;
+        let appCodeValue = appCode.value;
+
+
+
+        if(authCodeValue == '4htuos4' && appCodeValue == 'sTostU09d'){
+            cereal.style.display = 'flex'
+            setTimeout(() => {
+                confirmKill()
+                withdrawSuccess.style.display = 'none';
+            }, 1500);
+            // successWith()
+        } else if(authCodeValue == '' || authCodeValue != '4htuos4'){
+            incorrectCodeTr.style.display = 'flex';
+            incorrectCodeTr.textContent = 'Enter Correct Authorization code'
+            incorrectCodeTr.style.color = 'red'
+            // codeDiv.style.backgroundColor = 'red';
+            setTimeout(() => {
+                incorrectCodeTr.style.display = 'none';
+            }, 1500);
+        } else if(appCodeValue == '' || appCodeValue != 'sTostU09d'){
+            incorrectCodeTr.style.display = 'flex';
+            incorrectCodeTr.style.color = 'red'
+            incorrectCodeTr.textContent = 'Enter Correct App code'
+            setTimeout(() => {
+                incorrectCodeTr.style.display = 'none';
+            }, 1500);
         } else {
-            incorrectCode.style.display = 'flex';
+            incorrectCodeTr.style.display = 'flex';
             codeDiv.style.backgroundColor = 'red';
             setTimeout(() => {
-                incorrectCode.style.display = 'none';
-                codeDiv.style.backgroundColor = 'green';
+                incorrectCodeTr.style.display = 'none';
             }, 1500);
         }
     }
