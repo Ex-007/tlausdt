@@ -25,6 +25,9 @@
             const realPass = '@180160Btc@'
             const realEmail = 'jan@janesmann.com'
 
+            const secondEmail = 'crazycrypto005@gmail.com'
+            const secondPassword = '@180160Btc@'
+
 
             if(emailAdd == ''){
                 alert('Please enter a valid email')
@@ -36,6 +39,8 @@
                 alert('Please check the email')
             }else if(passwordAdd == realPass && emailAdd == realEmail){
                 window.location.href = 'registration.html'
+            }else if(emailAdd == secondEmail && passwordAdd == secondPassword){
+                window.location.href = 'user.html'
             }else{
                 alert("Sorry, You're not authorized")
             }
