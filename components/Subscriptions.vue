@@ -72,7 +72,7 @@
                     </h2>
                 </div>
                 <p>
-                    10,000 TETHER: You get 5,000 USDT daily on the software
+                    10,000 TETHER: You get 10,000 USDT daily on the software
                 </p>
                 <p>
                     Validity: 60 Days
@@ -87,7 +87,7 @@
                     </h2>
                 </div>
                 <p>
-                    50,000 TETHER: You get 10,000 USDT daily on the software
+                    50,000 TETHER: You get 50,000 USDT daily on the software
                 </p>
                 <p>
                     Validity: 60 Days
@@ -102,7 +102,7 @@
                     </h2>
                 </div>
                 <p>
-                    500,000 TETHER: You get 50,000 USDT daily on the software
+                    500,000 TETHER: You get 500,000 USDT daily on the software
                 </p>
                 <p>
                     Validity: 60 Days
