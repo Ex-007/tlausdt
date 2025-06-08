@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-image: linear-gradient(
+        to bottom,
+        #b39b58 0%,
+        #e0dacc 40%,
+        #886c35 70%,
+        #20b9af 100%
+    );
+    font-family: 'Georgia', 'Inter', serif;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (max-width: 768px){
+    p{
+        font-size: 13px;
+    }
+  }
