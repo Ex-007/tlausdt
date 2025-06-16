@@ -13,6 +13,9 @@
 </template>
 
 <script setup>
+    definePageMeta({
+      layout: false
+    })
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
