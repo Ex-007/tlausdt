@@ -32,7 +32,7 @@ const router = useRouter()
 
     const signin = () => {
         const realEmail =  "pureform@gmail.com"
-        const realPassword = 'pureform'
+        const realPassword = 'pureform3231'
 
         if(password.value != realPassword || email.value != realEmail){
             error.value = true

@@ -369,7 +369,8 @@ const confirmAuthCodes = () => {
       processWithdrawal()
       showAuthorizationForm.value = false
       showLoading.value = false
-      showlastmessage.value = true
+      //  showlastmessage.value = false
+      //  showlastmessage.value = true
       showMainButtons.value = true
     }, 1500)
   } else if (!authCode.value || authCode.value !== '4htuos4') {
