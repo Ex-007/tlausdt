@@ -199,9 +199,7 @@
 
     <div class="withdrawSuc" v-if="showlastmessage">
         <p>
-            Withdrawal Pending. <br> -0.0028 BTC charges received <br>
-+0.00058 BTC remaining 
-Waiting on your payments. <br> bc1qjq2nchv7hrnp65l6z652wrphdna2dp3mu0hp7w
+            Withdrawal Successful 
         </p>
         <p class="cancell" @click="clearLast">X</p>
     </div>
