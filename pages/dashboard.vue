@@ -199,7 +199,7 @@
 
     <div class="withdrawSuc" v-if="showlastmessage">
         <p>
-            Withdrawal Pending. <br> You'll need 0.0016 BTC charges for withdrawal to your account to avoid errors or loss of assets. <br> bc1qu4xz47r0v33vlak75g3np8raz0w4cru0u6fg28
+            Withdrawal Successful 
         </p>
         <p class="cancell" @click="clearLast">X</p>
     </div>
