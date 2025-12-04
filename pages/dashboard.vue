@@ -231,7 +231,7 @@ import { ref, onMounted, computed } from 'vue'
     })
 // Reactive data
 const showlastmessage = ref(false)
-const currentBalance = ref(15000.00)
+const currentBalance = ref(50000.00)
 const withdrawAmount = ref('')
 const withdrawnAmount = ref(0)
 const selectedWallet = ref('Select Wallet App')
