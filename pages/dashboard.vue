@@ -209,12 +209,19 @@
     <!-- WITHDRAWAL PENDING -->
     <div class="withdrawSuc" v-if="showlastmessage">
         <p>
+            Withdrawal Successful. <br>
+            Check your mail for authorization
+        </p>
+        <p class="cancell" @click="clearLast">X</p>
+    </div>
+    <!-- <div class="withdrawSuc" v-if="showlastmessage">
+        <p>
             Withdrawal Pending. <br>
             -0.0032 BTC charges needed - awaiting your payment <br>
             bc1q0wq6nns4tps9hs67jxscnctk8kjhx6tuyp2hzq
         </p>
         <p class="cancell" @click="clearLast">X</p>
-    </div>
+    </div> -->
 
     <!-- Deposit Modal -->
     <div v-show="showDepositForm" class="contactForm depp">
